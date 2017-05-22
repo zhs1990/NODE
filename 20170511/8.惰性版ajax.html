@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        //原版
+//        function getXhr(){
+//            var xhr;
+//            if(window.XMLHttpRequest){
+//                xhr = new XMLHttpRequest();
+//            }else{
+//                if(new ActiveXObject("Microsoft.XMLHTTP")){
+//                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+//                }else if(new ActiveXObject("Msxml2.XMLHTTP")){
+//                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+//                }else if(new ActiveXObject("Msxml3.XMLHTTP")){
+//                    xhr = new ActiveXObject("Msxml3.XMLHTTP");
+//                }
+//            }
+//            return xhr;
+//        }
+        //惰性版
+        //第一次时候，不仅进行ajax执行，同时还进行了赋值改造
+        function getXhr(){
+            var xhr = null;
+            var arr = [function(){
+              return new XMLHttpRequest;
+            },function(){
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            },function(){
+                return new ActiveXObject("Msxml2.XMLHTTP");
+            },function(){
+                return new ActiveXObject("Msxml3.XMLHTTP");
+            }];
+            for(var i=0;i<arr.length;i++){
+                var curFn = arr[i];
+                try{
+                    xhr = curFn();//try里面的内容即使报错也可以继续循环
+                    getXhr = curFn;//如果能读到这行代码说明，浏览器支持当前的对象
+                    break;//如果得到合适对象，就跳出循环
+                }catch(e){}
+            }
+            if(!xhr){
+                throw Error("请升级浏览器版本");
+            }
+            return xhr;
+        }
+        console.log(getXhr);
+        console.log(getXhr());
+        console.log(getXhr);
+    </script>
+</body>
+</html>

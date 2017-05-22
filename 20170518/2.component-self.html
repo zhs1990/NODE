@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box1">
+        <my-zhs></my-zhs>
+        <child></child>
+    </div>
+
+    <div id="box2">
+        <child></child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box1",
+            components:{
+                "my-zhs":{
+                    template:"<h2 @click='say'>{{title}}</h2>",
+                    data:function(){
+                        return {title:"哈哈哈"}
+                    },
+                    methods:{
+                        say:function(){
+                            alert(111);
+                        }
+                    }
+                },
+                child:{
+                    template:"<h2 @click='say'>{{title}}</h2>",
+                    data:function(){
+                        return {title:"呵呵呵"}
+                    },
+                    methods:{
+                        say:function(){
+                            alert(222);
+                        }
+                    }
+                }
+            }
+        });
+        new Vue({
+            el:"#box2",
+            components:{
+                child:{
+                    template:"<h2 @click='say'>{{title}}</h2>",
+                    data:function(){
+                        return {title:"呵呵呵"}
+                    },
+                    methods:{
+                        say:function(){
+                            alert(222);
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container" id="box">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <caption class="h3 text-danger text-center">人员信息</caption>
+                    <tr>
+                        <th class="text-center">用户名</th>
+                        <th class="text-center">联系方式</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    <tr class="text-center" v-for="attr in users">
+                        <td>{{attr.name}}</td>
+                        <td>{{attr.tel}}</td>
+                        <td><button class="btn btn-danger" @click="remove(attr)">删除</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="username" class="control-label">用户名</label>
+                <input type="text" class="form-control" id="username" v-model="list.name">
+            </div>
+            <div class="form-group">
+                <label for="tel" class="control-label">联系方式</label>
+                <input type="text" class="form-control" id="tel" v-model="list.tel">
+            </div>
+            <button type="button" class="btn btn-success"  @click="add">添加</button>
+        </form>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                list:{
+                    name:"",
+                    tel:""
+                },
+                users:[
+                    {name:"react1",tel:1232},
+                    {name:"react2",tel:123}
+                ]
+            },
+            methods:{
+                add:function(){
+                    if(this.list.name&&this.list.tel) {
+                        this.users.push(this.list);
+                        this.list = {name: "", tel: ""};
+                    }
+                },
+                remove:function(e){
+
+                    //方法一：下面会出现数组塌陷问题
+//                    for(var i=0;i<this.users.length;i++){
+//                        var curUser = this.users[i];
+//                        if(e===curUser){
+//                            this.users.splice(i,1);
+//                        }
+//                    }
+                    //方法二:
+                    console.log(this.users);
+                    this.users = this.users.filter(function(item){
+                        return item!=e;
+                    });
+                    console.log(this.users);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

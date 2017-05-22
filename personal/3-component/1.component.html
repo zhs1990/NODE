@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            template:"<div><h3>我是A组件</h3><child></child></div>",
+            components:{
+                child:{
+                    template:"<div><h4>我是B组件</h4><sun></sun></div>",
+                    components:{
+                        sun:{
+                            template:"<h5>我是C组件</h5>"
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

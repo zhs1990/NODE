@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak]{ /*编译前就是一个普通的属性选择器，避免双花括号出现闪烁的情况*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" v-cloak>
+        <h3>{{ title }}</h3>
+        <div v-html="htmlStr"></div>
+        <h4>{{ context?context:"没有值存在" }}</h4>
+        <h4>{{ context=context||"没有值存在" }}</h4>
+        <h5>{{ num+100 }}</h5>
+        <h6>{{ text.toUpperCase() }}</h6>
+        <h2>{{ arr.join().slice(2) }}</h2>
+        <a v-bind:href="link">{{linkText}}</a>
+        <a :href="link">{{linkText}}</a>
+        <img :src="img" />
+        <!--
+            A：编译模板方式
+                1,{{ val }}   在html中插入值
+                    可以在{{}}进行表达式操作
+                        三目运算符
+                            {{ context?context:"没有值存在" }}
+                            {{ context=context||"没有值存在" }}
+                        简单运算
+                            <h5>{{ num+100 }}</h5>
+                        一些表达式
+                            <h6>{{ text.toUpperCase() }}</h6>
+                            <h2>{{ arr.join().slice(2) }}</h2>
+
+
+                    不可以在{{}}中使用的内容
+                        不能使用操作语句
+                            {{ var name = 100 }}
+                            if判断 {{ if(true){title} }}
+
+                2,<标签 v-text="val"></标签>  采用这种方式是避免了闪烁，看不到编译前的内容
+                    会将元素原有的内容替换掉
+            B：v-cloak避免了闪烁，也可以使用双花括号插入值
+            C：插入html片段  尽量少用，避免xss攻击
+                <div v-html="htmlStr"></div>
+            D:动态绑定属性  v-bind
+                <a v-bind:href="link">百度</a>
+                简写:<a :href="link">百度</a>
+
+
+        -->
+        <h3 v-text="title">哈哈</h3>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                title:"hellow world!",
+                text:"hello",
+                htmlStr:"<h4>你好</h4>",
+                context:"Vue.js",
+                num:10,
+                arr:["abcd"],
+                link:"http://www.jd.com",
+                linkText:"京东",
+                img:"https://imgsa.baidu.com/news/q%3D100/sign=ac72bcdb02fa513d57aa68de0d6c554c/c75c10385343fbf28fec8f24ba7eca8064388ff0.jpg"
+            }
+        });
+        setTimeout(function(){
+            vm.num = 200;
+            vm.link = "http://www.baidu.com";
+            vm.linkText = "百度";
+            vm.img = "https://imgsa.baidu.com/news/q%3D100/sign=f4e6092e8c18367aab897bdd1e728b68/08f790529822720e484426fd71cb0a46f21fab2b.jpg";
+        },3000);
+    </script>
+</body>
+</html>

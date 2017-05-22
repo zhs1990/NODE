@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">获取数据</button>
+    <script src="ajax.js"></script>
+    <script>
+        getD();
+        function getD(){
+            ajax({
+                type:"get",
+                url:"/getData",
+                data:{
+                    name:"abc",
+                    age:10
+                },
+                success:function(data){
+                    document.body.innerHTML+=data;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

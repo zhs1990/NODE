@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        商品名称：<input type="text" v-model="name"> <br><br>
+        商品价格：<input type="number" min="0" v-model="price"><br><br>
+        商品数量：<input type="number" min="0" v-model="count"><br><br>
+        <!--商品总计：<span>{{sum}}</span>-->
+        商品总计：<input type="text" v-model="sum">
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                price:100,
+                count:10,
+                name:"vue"
+            },
+            computed:{
+                sum:{
+                    get:function(){
+                        return this.price*this.count;
+                    },
+                    set:function(e){
+                        this.count = e/this.price;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

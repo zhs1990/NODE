@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        //处理ajax对象创建兼容方法
+        function getXhr(){
+            var xhr = null;
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();//高版本
+            }else{
+                if(new ActiveXObject("Microsoft.XMLHTTP")){
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }else if(new ActiveXObject("Msxml2.XMLHTTP")){
+                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                }else if(new ActiveXObject("Msxml3.XMLHTTP")){
+                    xhr = new ActiveXObject("Msxml3.XMLHTTP");
+                }
+            }
+            return xhr;
+        }
+        var xhr = getXhr();
+        xhr.open("get","./data1.json",true);
+        xhr.onreadystatechange = function(){
+           if(this.readyState===4 && /^2\d{2}$/.test(this.status)) {
+                console.log(this.responseText);
+           }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>

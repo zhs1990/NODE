@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>用户增加页面</h2>
+    <a href="index.html">返回</a>
+    <label for="user">用户名:</label>
+    <input type="text" id="user">
+    <label for="user">联系方式:</label>
+    <input type="text" id="tel">
+    <input type="button" value="增加用户" id="add">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var oUser = document.getElementById("user");
+        var oTel = document.getElementById("tel");
+        var oAdd = document.getElementById("add");
+
+        oAdd.onclick = function(){
+            $.ajax({
+                url:"/addUserData",
+                type:"POST",
+                data:{
+                    name:oUser.value,
+                    age:oTel.value
+                },
+                dataType:"json",
+                success:function(result){
+                    if(result&&result.error===0){
+                        alert(result.msg);
+                    }else{
+                        alert("用户信息添加失败");
+                    }
+                    console.log(result);
+                }
+            });
+        };
+    </script>
+</body>
+</html>

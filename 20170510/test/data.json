@@ -1,0 +1,56 @@
+{
+    "error":0,
+    "data":[
+        {
+            "num"  : 1,
+            "name" : "雪碧",
+            "price" : 2.2,
+            "count" : 50
+        },{
+            "num"  : 2,
+            "name" : "可口可乐",
+            "price" : 2.3,
+            "count" : 55
+        },{
+            "num"  : 3,
+            "name" : "百事可乐",
+            "price" : 2.3,
+            "count" : 56
+        },{
+            "num"  : 4,
+            "name" : "美年达",
+            "price" : 2.1,
+            "count" : 45
+        },{
+            "num"  : 5,
+            "name" : "醒目",
+            "price" : 2.0,
+            "count" : 35
+        },{
+            "num"  : 6,
+            "name" : "健力宝",
+            "price" : 2.6,
+            "count" : 40
+        },{
+            "num"  : 7,
+            "name" : "七喜",
+            "price" : 2.2,
+            "count" : 42
+        },{
+            "num"  : 8,
+            "name" : "王老吉",
+            "price" : 3.2,
+            "count" : 30
+        },{
+            "num"  : 9,
+            "name" : "加多宝",
+            "price" : 3.3,
+            "count" : 45
+        },{
+            "num"  : 10,
+            "name" : "芬达",
+            "price" : 2.3,
+            "count" : 48
+        }
+    ]
+}

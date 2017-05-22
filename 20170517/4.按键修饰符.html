@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        enter：<input type="text" @keyup.enter="fn"><br><br>
+        delete：<input type="text" @keyup.delete="fn"><br><br>
+        esc：<input type="text" @keyup.esc="fn"><br><br>
+        space：<input type="text" @keyup.space="fn"><br><br>
+        tab：<input type="text" @keyup.tab="fn"><br><br>
+        up：<input type="text" @keyup.up="fn"><br><br>
+        down：<input type="text" @keyup.down="fn"><br><br>
+        left：<input type="text" @keyup.left="fn"><br><br>
+        right：<input type="text" @keyup.right="fn"><br><br>
+        Q：<input type="text" @keyup.q="fn"><br><br><br><br>
+
+        <input type="text" @keyup.enter="add" v-model="val">
+        <ul>
+            <li v-for="attr in list">{{attr}}</li>
+        </ul>
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                list:["vue","react","name"],
+                val:""
+            },
+            methods:{
+                fn:function(){
+                    alert(1);
+                },
+                add:function(){
+                    if(this.val){
+                        this.list.push(this.val);
+                        this.val = "";
+                    }else{
+                        alert("请填写内容");
+                    }
+
+                }
+            }
+        });
+        Vue.config.keyCodes.q = 81;
+    </script>
+</body>
+</html>

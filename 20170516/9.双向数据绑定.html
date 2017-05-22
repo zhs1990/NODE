@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <!--第一种情况-->
+        <input type="text" v-model="name" />
+        <p>{{name}}</p>
+        <!--第二种情况-->
+        <input type="checkbox" v-model="val" />
+        <p>{{val}}</p>
+        <!--第三种情况-->
+        React:<input type="checkbox" value="A" v-model="arrs">
+        Vue:<input type="checkbox" value="B" v-model="arrs">
+        Node:<input type="checkbox" value="C" v-model="arrs">
+        <p>{{arrs}}</p>
+        <!--第四种情况-->
+        用户名：<input type="text" v-model="user.name">
+        电话：<input type="text" v-model="user.tel">
+        <ul>
+            <li>{{user.name}}</li>
+            <li>{{user.tel}}</li>
+        </ul>
+
+        <input type="text" v-model="num1" />*
+        <input type="text" v-model="num2" />
+        <p>{{num1*num2}}</p>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                name:"",
+                val:"",
+                arrs:[],
+                user:{
+                    name:"",
+                    tel:""
+                },
+                num1:"",
+                num2:""
+            }
+        });
+        setTimeout(function(){
+            vm.name = "你好";
+        },3000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>用户增加页面</h2>
+    <a href="index.html">返回</a>
+    <label for="user">用户名:</label>
+    <input type="text" id="user">
+    <label for="user">联系方式:</label>
+    <input type="text" id="tel">
+    <input type="button" value="增加用户" id="add">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var oUser = document.getElementById("user");
+        var oTel = document.getElementById("tel");
+        var oAdd = document.getElementById("add");
+        var oQ = getUrlParam(window.location.href);
+        getUserData();
+        oAdd.onclick  =function(){
+            console.log(oQ);
+            var uid = oQ.uid;
+            $.ajax({
+                url:"/updateUserData",
+                type:"POST",
+                data:{
+                    name:oUser.value,
+                    age:oTel.value,
+                    id:uid
+                },
+                dataType:"json",
+                success:function(result){
+                    if(result&&result.error===0){
+                        alert(result.msg);
+                    }else{
+                        alert("用户信息修改失败");
+                    }
+                    console.log(result);
+                }
+            });
+        };
+        function getUrlParam(url) {
+            let reg = /([^?&=]+)=([^?&=]+)/g;
+            let obj = {};
+            url.replace(reg, function () {
+                obj[arguments[1]] = arguments[2];
+            });
+            return obj;
+        }
+        function getUserData(){
+            $.ajax({
+                url:"/getUserInfor",
+                type:"GET",
+                data:oQ,
+                dataType:"json",
+                success:function(result){
+                    if(result&&result.error===0){
+                        oUser.value = result.data.name;
+                        oTel.value = result.data.age;
+                    }
+                    console.log(result);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

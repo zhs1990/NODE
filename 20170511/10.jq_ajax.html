@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            url:url, //请求地址
+            type:"GET", //请求方式    JQ1.9版本以下用method
+            beforeSend:function(xhr){
+              //发送请求之前  触发
+            },
+            data:{
+                //向服务端发送的数据
+            },
+            cache:true, //是否缓存，true 缓存   false不缓存
+            async:true, //是否异步,true 异步  false  同步
+            jsonp:"",//重写jsonp的请求url中回调函数key的名称
+            jsonpCallback:"",//指定jsonp回调函数的名称
+            dataType:"text", //接受的数据解析格式  xhr.responseText
+            context:window,//指定success里面上下文this
+            success:function(result){ //成功的回调函数
+                console.log(result);
+                //this默认指向  当前options
+            },
+            timeout:3000,//设置请求超时时间，如果超时会触发error  xhr.timeout  触发  xhr.ontimeout = function
+            error:function(err){    //请求出错
+                console.log(err);
+            },
+            complete:function(xhr){
+                //不管提交成功与否，都会执行
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

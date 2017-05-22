@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h3>CRM用户系统</h3>
+<a href="addUser.html" class="add">增加</a>
+<p>
+    <span>id</span>
+    <span>name</span>
+    <span>email</span>
+    <span>操作</span>
+</p>
+<ul id="list">
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>reac</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+</ul>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    var oList = document.getElementById("list");
+
+
+    $.ajax({
+        url:"/getAllUser",
+        type:"GET",
+        dataType:"json",
+        success:function(result){
+            if(result&&result.error===0){
+                bindData(result);
+            }
+        }
+    });
+    function bindData(data){
+        let str = "";
+        for(let i=0;i<data.data.length;i++){
+            str+=`<li>
+                    <span>${data.data[i].id}</span>
+                    <span>${data.data[i].name}</span>
+                    <span>${data.data[i].age}</span>
+                    <span><a href="/template/update.html?uid=${data.data[i].id}">修改</a> <a class="removeBtn" href="javascript:;" uid="${data.data[i].id}">删除</a></span>
+                  </li>`;
+        }
+        oList.innerHTML = str;
+        var aRemoveBtn = document.querySelectorAll(".removeBtn");
+
+        for(var i=0;i<aRemoveBtn.length;i++){
+            aRemoveBtn[i].onclick = function(){
+                removeData(this);
+            } ;
+        }
+
+        function removeData(obj){
+            var rId = obj.getAttribute("uid");
+            var flag = confirm("是否删除当前用户信息");
+            if(!flag){
+                return;
+            }
+            $.ajax({
+                url:"/deleteUserData",
+                type:"GET",
+                data:{
+                    rid:Number(rId)
+                },
+                dataType:"json",
+                success:function(result){
+                    if(result&&result.error===0){
+                        alert(result.msg);
+                        oList.removeChild(obj.parentNode.parentNode);
+                    }
+                }
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

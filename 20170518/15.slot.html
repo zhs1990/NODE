@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <child>
+            <header slot="header">头部</header>
+            <h3 slot="title">标题</h3>
+            <footer>头部</footer>
+        </child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //slot  分发内容  分放内容  分配位置
+        /*
+        * template是将child标签的内容覆盖掉，如果里面内容了，也会被覆盖掉，
+        * 如果想要保留原有内容，可以通过<slot></slot>插入到模板相应位置中
+        * 如果希望将模板内容放在原有布局中某一个位置，可以通过如下操作
+        * 模板内容如下：
+            *   <div>
+            *       <slot name='header'></slot>
+            *       <p>这是一个主体内容</p>
+            *       <slot></slot>
+            *   </div>
+            *
+           html如下：
+             <child>
+                 <header slot="header">头部</header>
+                 <h3>标题</h3>
+                 <footer>头部</footer>
+             </child>
+        * */
+        new Vue({
+            el:"#box",
+            components:{
+                child:{
+                    //template:"<div><p>这是一个主体内容</p><slot></slot></div>"
+                    //
+                    template:"<div><slot name='header'></slot><slot name='title'></slot><p>这是一个主体内容</p><slot></slot></div>"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

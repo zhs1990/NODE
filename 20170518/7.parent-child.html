@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>父组件</h3>
+        <input type="text" v-model="val">
+        <child :mess="val"></child>
+
+        <child :mess="val" num="1"></child>
+        传入的是字符串
+        <child :mess="val" :num="1"></child>
+        传入的是数字
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var child = {
+            props:["mess","num"],
+            template:"<div><h3>子组件</h3>父组件数据只作为初始值：<input type='text' v-model='message'><br>可以和父组件同步的：<input type='text' v-model='mess'><br>通过计算属性：<input type='text' v-model='comps'> <button @click='say'>{{number}}</button></div>",
+            //父组件传递给子组件初始数据，一旦接收到数据，就会将当前得到的数据作为子组件的私有局部数据
+            data:function(){
+                return {message:this.mess,number:this.num};
+            },
+            computed:{
+                //父组件传递给子组件的数据进行处理，处理后作为局部数据，依然也可以和父组件的数据状态同步
+                comps:function(){
+                    return this.mess.toUpperCase();//对父组件传递进来的数据进行处理
+                }
+            },
+            methods:{
+                say:function(){
+                    alert(typeof this.num)
+                }
+            }
+        };
+        new Vue({
+            el:"#box",
+            data:{
+                val:"hello"
+            },
+            components:{
+                child:child
+            }
+        });
+    </script>
+</body>
+</html>

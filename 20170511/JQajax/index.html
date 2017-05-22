@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">获取数据</button>
+<p id="text"></p>
+<script src="../jquery-3.1.1.min.js"></script>
+<script>
+    $(function(){
+        $("#btn").click(getData);
+        function getData(){
+            $.ajax({
+                url:"../data1.json",
+                type:"GET",
+                data:{
+                    id:24,
+                    name:"zhs"
+                },
+                dataType:"json",
+                success:function(result){
+                    console.log(result);
+                    $("#text").html(result.name+":"+result.age);
+                }
+            });
+        }
+
+    });
+</script>
+</body>
+</html>

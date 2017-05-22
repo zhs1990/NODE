@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style:none;
+        }
+        #box{
+            overflow: hidden;
+            width: 300px;
+            margin:100px auto;
+        }
+        ul{
+            height:30px;
+        }
+        li{
+            width:100px;
+            height:30px;
+            line-height:30px;
+            text-align: center;
+            float:left;
+            background: #7ee0ff;
+            cursor: pointer;
+        }
+        li.cur{
+            background: indianred;
+        }
+        .tab div{
+            width:300px;
+            height:300px;
+            background: #ccc;
+            display: none;
+        }
+        .tab div.active{
+            display: block;
+        }
+    </style>
+</head>
+    <div id="box">
+        <div class="tab">
+            <ul>
+                <li @click="clicked='one'" :class="{cur:clicked==='one'}">首页</li>
+                <li @click="clicked='two'" :class="{cur:clicked==='two'}">娱乐</li>
+                <li @click="clicked='three'" :class="{cur:clicked==='three'}">新闻</li>
+            </ul>
+            <div :class="{active:clicked==='one'}">首页内容</div>
+            <div :class="{active:clicked==='two'}">娱乐内容</div>
+            <div :class="{active:clicked==='three'}">新闻内容</div>
+        </div>
+    </div>
+<body>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                clicked:"one",
+                display:"active",
+                bgColor:"cur"
+            }
+        });
+    </script>
+</body>
+</html>

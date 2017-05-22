@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>{{ title }}</h3>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var obj = {
+            title:"hello"
+        };
+        //1.生成vue根实例，并传入一个参数对象
+        var vm = new Vue({
+            el:"#box",  //指定应用范围
+            data:obj    //指定数据
+        });
+        //vm根实例会暴露出一些属性和方法  前面$
+        //console.log(vm.$data===obj);//true 两者指向同一空间地址
+        //obj.title = "hello,zhs";
+        //vm.say = "hello,tong"; //不能再实例生成后添加不存在的属性，可以提前定义属性，后赋值
+
+        //获取挂载元素
+        //console.log(vm.$el);  //<div id="box"></div>   相当于document.getElementById("box");
+        //console.log(vm.$el===document.getElementById("box"));  //true
+
+
+        //监听数据状态方法，参数1是新值，参数2是旧值，监听的数据改变的时候触发，并且将新值和旧值当做参数传递进来
+        vm.$watch("title",function(newVal,oldVal){
+            console.log(newVal,oldVal);
+        });
+        setTimeout(function(){
+            vm.title = "webpack";
+        },3000);
+
+        //手动指定挂载元素（如果在初始化vue实例时，没有设置el，可以通过以下方法进行挂载）
+        //vm.$mount("#box");
+
+        /*setTimeout(function(){
+            vm.$mount("#box");
+        },3000);*/
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h3>CRM用户系统</h3>
+<a href="addUser.html" class="add">增加</a>
+<p>
+    <span>id</span>
+    <span>name</span>
+    <span>email</span>
+    <span>操作</span>
+</p>
+<ul id="list">
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>reac</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span>1</span>-->
+    <!--<span>react</span>-->
+    <!--<span>react</span>-->
+    <!--<span><a href="javascript:;">删除</a></span>-->
+    <!--</li>-->
+</ul>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    var oList = document.getElementById("list");
+
+    $.ajax({
+        url:"/getUserData",
+        type:"GET",
+        dataType:"json",
+        success:function(result){
+            bindData(result);
+        }
+    });
+    function bindData(data){
+        for(var i=0;i<data.data.length;i++){
+            oList.innerHTML+="<li><span>"+data.data[i].id+"</span><span>"+data.data[i].name+"</span><span>"+data.data[i].age+"</span><span><a href="+"javascript:;"+">删除</a></span></li>"
+        }
+
+    }
+</script>
+</body>
+</html>

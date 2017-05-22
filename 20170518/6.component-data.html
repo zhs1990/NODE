@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <!--子组件外部传递数据 自定义mess="zhs"  这样传递的都是string类型的-->
+        <!-- v-bind:mess  是将传入的数据作为变量来处理，而不是字符串-->
+        <child v-bind:mess="title" zhs="你好未来"></child>
+        <child v-bind:zhs="text"></child>
+        <child v-bind:my-data="sex"></child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //子组件不可以直接使用父组件的数据
+        //props 用来从父组件传递数据给子组件
+        var child = {
+            props:["mess","zhs","myData"],//指定一个传递的数据属性,用来接收传递进来的数据属性
+//            template:"<div><h3>{{mess}}+{{zhs}}</h3></div>"
+            template:"<div><h3>{{mess}}{{zhs}}{{myData}}</h3></div>"
+        };
+        new Vue({
+            el:"#box",
+            data:{
+                title:"parentData",
+                text:10,
+                sex:"男"
+            },
+            components:{
+                child:child
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>父组件</h3>
+        <input type="text" v-model="val" />
+
+        <child v-on:getclothes="answer"></child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                val:"准备接收",
+                reply:""
+            },
+            components:{
+                child:{
+                    template:"<div><h3>子组件</h3><input type='button' @click='send' value='子组件说'><p>{{message}}</p></div>",
+                    data:function(){
+                        return {message:"准备发送"};
+                    },
+                    methods:{
+                        send:function(){
+                            this.message = "下雨啦收衣服啦";
+                            this.$emit("getclothes",this.message);
+                        }
+                    }
+                }
+            },
+            methods:{
+                answer:function(val){
+                    this.val = val;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            width:100px;
+            height:100px;
+            background: red;
+        }
+        .green{
+            width:100px;
+            height:100px;
+            background: green;
+        }
+        .yellow{
+            width:100px;
+            height:100px;
+            background: yellow;
+        }
+        .hide{
+            width:200px;
+            height:200px;
+            background: purple;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!--
+            v-if  操作DOM元素
+                true    插入
+                false   移出
+            v-show  操作元素样式显示隐藏
+                true    显示
+                false   隐藏
+            v-once  一次性插入
+                <div v-once>{{text}}</div>
+        -->
+        <div class="red" v-if="isInsert<5"></div>
+        <div class="green" v-else-if="isInsert===5"></div>
+        <div class="yellow" v-else="isInsert>5"></div>
+
+        <div class="hide" v-show="isShow"></div>
+
+
+        <div v-once>{{text}}</div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                isInsert:4,
+                isShow:false,
+                text:"哈哈"
+            }
+        });
+        setTimeout(function(){
+            vm.isShow = true;
+            vm.text = "搜狗搜索";
+        },3000);
+    </script>
+</body>
+</html>

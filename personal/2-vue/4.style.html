@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <p :style="{width:'100px',height:'100px',background:'red'}">对象写法</p>
+        <div :style="[styleObj,styleObj2]">数组写法</div>
+        <p :style="styleObj">对象写法</p>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                styleObj:{
+                    width:"100px",
+                    height:"200px",
+                    background:"yellow"
+                },
+                styleObj2:{
+                    width:"200px",
+                    height:"300px",
+                    background:"green"
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

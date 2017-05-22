@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box" style="background: red;">
+        <my-html></my-html>
+        <zhs></zhs>
+    </div>
+    <div id="box2" style="background: yellow;">
+        <my-html></my-html>
+        <tl></tl>
+    </div>
+    <template id="temps">
+        <div>
+            <h3 @click="say">我是全局模板，欢迎使用</h3>
+        </div>
+    </template>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        Vue.component("my-html",{
+            template:"#temps",
+            methods:{
+               say:function(){
+                   alert(1111);
+               }
+            },
+            created:function () {
+                alert("创建组件完成");
+            }
+        });
+        new Vue({
+            el:"#box",
+            components:{
+                "zhs":{
+                    template:"<h4>我是box局部组件</h4>"
+                }
+            }
+        });
+        new Vue({
+            el:"#box2",
+            components:{
+                "tl":{
+                    template:"<h4>我是BOX2局部组件</h4>"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

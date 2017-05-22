@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <!--<child mess="hello"></child>-->
+        <!--<child :mess="1"></child>-->
+        不接受外部的数据 default默认值才会生效
+        <!--<child></child>-->
+        <!--<child :mess="100"></child>-->
+        <!--<child :mess="json"></child>-->
+        <child></child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                title:"哈啊",
+                json:{
+                    val:"啦"
+                }
+            },
+            components:{
+               child:{
+                   //props:["mess"],
+                   props:{
+                       //指定传递的类型，能够验证的类型：string，boolean,function,array,object,number
+                       //mess:Boolean,
+                       //mess:[Boolean,Number]//可以指定多个类型
+                       mess:{//验证多项
+                           //type:Number,
+                           type:Object,
+                           default:function(){
+                               return {val:"默认值"}//给一个对象或者数组设置默认值时，需要以函数的形式进行设置
+                           }
+                           //type:[Number,String],//多个类型
+                           //default:"这是什么都没有写的情况下显示的内容", //默认值
+                           //required:true, //如果为true是指当前mess是必传项，默认值与必传项是不能共同使用的
+                            //validator:function(val){ //验证函数
+//                               console.log(val);
+//                                return val>50;  //如果返回值为true，警告会消失，返回false会出现警告
+//                           }
+                       }
+                   },
+                   template:"<div><h3>{{mess.val}}</h3></div>"
+               }
+            }
+        });
+    </script>
+</body>
+</html>

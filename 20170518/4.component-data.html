@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <child></child>
+        <child></child>
+        <child></child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            components:{
+                child:{
+                    template:"<div><input type='text' v-model='val' /><p>{{val}}</p></div>",
+                    data:function(){
+                        return {val:"hello"};//每创建一个组件，返回一个新的对象，新的存储空间地址，此时对象属于当前组件自有的对象
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

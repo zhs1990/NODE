@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .style1{
+            width: 200px;
+            height:200px;
+            background: red;
+        }
+        .style2{
+            width: 200px;
+            height:200px;
+            background: yellow;
+        }
+        .font{
+            font-size: 30px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button @click="isActive=!isActive">切换class名</button>
+    <div :class="[s1,f]">哈哈哈</div>
+    <div :class="['style1','font']">字符串class</div>
+    <div :class="{style1:isActive,style2:!isActive}">对象写法</div>
+    <div :class="[isActive?s2:s1]">三元运算写法</div>
+
+    <div :class="[{style1:!iActive,style2:isActive},'font']">对象+数组写法</div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            s1:"style1",
+            s2:"style2",
+            f:"font",
+            isActive:false
+        }
+    });
+</script>
+</body>
+</html>

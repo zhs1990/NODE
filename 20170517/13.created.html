@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="item in result.users">{{item.name}}:{{item.price}}</li>
+        </ul>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+              result:""
+            },
+            created:function(){//实例创建完成请求初始数据
+                var xhr = new XMLHttpRequest();
+                var _this = this;
+                xhr.open("GET","./data.json",false);
+                xhr.onreadystatechange = function(){
+                    if(this.readyState===4&&/^2\d{2}$/.test(this.status)){
+                        var initData = JSON.parse(this.responseText);
+                        _this.result = initData;
+                    }
+                };
+                xhr.send();
+            },
+            mounted:function(){
+                console.log(this.result);
+            }
+        });
+    </script>
+</body>
+</html>

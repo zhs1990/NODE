@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="val">
+        <input type="text"  v-model="title">
+        <p>{{obj.name}}</p>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                val:"",
+                title:"",
+                obj:{
+                    name:"zhs",
+                    age:20
+                }
+            },
+            watch:{//监听一些内容变化
+                val:function(newVal,oldVal){
+                    console.log(newVal,oldVal);
+                },
+                title:"listen",//即可以监听一个属性，又可以监听一个方法名
+                obj:{//监听对象得到的新值和旧值都是同一个
+                    handler:function(newVal,oldVal){
+                        console.log(newVal,oldVal);
+                    },
+                    deep:true
+                }
+            },
+            methods:{
+                listen:function(newVal,oldVal){
+                    console.log(newVal,oldVal);
+                }
+            }
+        });
+        setTimeout(function(){
+            vm.obj.name = "tonglu";
+        },3000);
+//        vm.$watch("val",function (newVal,oldVal) {
+//            console.log(newVal,oldVal);
+//        });
+
+    </script>
+</body>
+</html>

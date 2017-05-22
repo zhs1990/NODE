@@ -1,0 +1,10 @@
+{
+    "users":[
+        { "name":"react" , "price":100 },
+        { "name":"vue" , "price":15 },
+        { "name":"angularjs" , "price":200 },
+        { "name":"nodejs" , "price":500 },
+        { "name":"bootstrap" , "price":10 },
+        { "name":"react" , "price":100 }
+    ]
+}

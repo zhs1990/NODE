@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <div v-bind:style="{width:'100px',height:'100px',backgroundColor:'red'}"></div>
+        <div v-bind:style="styleObj"></div>
+        <div v-bind:style="[styleObj,styleObj2]"></div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                styleObj:{
+                    width:'100px',
+                    height:'100px',
+                    backgroundColor:'yellow'
+                },
+                styleObj2:{
+                    backgroundColor:'red'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

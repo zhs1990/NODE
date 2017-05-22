@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <child v-on:zhs="answer"></child>
+        <p>传递情况：{{title}}</p>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+              title:"等待接受"
+            },
+            components:{
+                child:{
+                    template:"<div><input type='button' value='子组件发送' @click='say' /></div>",
+                    data:function(){
+                        return {message:"我是子组件传递的数据"};
+                    },
+                    methods:{
+                        say:function(){
+                            this.$emit("zhs",this.message);
+                        }
+                    }
+                }
+            },
+            methods:{
+                answer:function(val){
+                    alert("收到子组件发送的消息");
+                    this.title = val;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        on(oBtn,"click",function(){
+            alert("welcome");
+        });
+        //惰性函数：只有第一次调用的时候执行判断，之后的调用不需要做判断
+        function on(ele,type,fn){//每调用一次on方法都会做一次兼容处理判断
+            if(ele.addEventListener){
+                ele.addEventListener(type,fn,false);
+            }else{
+                ele.attachEvent("on"+type,fn);
+            }
+        }
+
+    </script>
+</body>
+</html>

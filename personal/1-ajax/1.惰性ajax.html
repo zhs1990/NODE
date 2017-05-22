@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getXhr(){
+            var xhr = null;
+            var arr = [function(){
+                return new XMLHttpRequest;
+            },function(){
+                return new ActiveXObject("Microsoft.XMLHTTP");
+            },function(){
+                return new ActiveXObject("Msxml2.XMLHTTP");
+            },function(){
+                return new ActiveXObject("Msxml3.XMLHTTP");
+            }];
+
+            for(var i=0;i<arr.length;i++){
+                var curFn = arr[i];
+                try{
+                    xhr = curFn();
+                    getXhr = curFn;
+                    break;
+                }catch(e){}
+            }
+
+            if(!xhr){
+                throw Error("请升级你的浏览器，版本太低！");
+            }
+            return xhr;
+        }
+        console.log(getXhr);
+        console.log(getXhr());
+        console.log(getXhr);
+    </script>
+</body>
+</html>

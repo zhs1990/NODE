@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        function on(ele,type,fn){
+            if(ele.addEventListener){
+                on = function(ele,type,fn){
+                    ele.addEventListener(type,fn,false);
+                };
+            }else{
+                on = function(ele,type,fn){
+                    ele.attachEvent("on"+type,fn);
+                };
+            }
+            //函数内调用的原因是为了触发点击操作
+            on(ele,type,fn);
+        }
+        function fn1(){
+            alert(111);
+        }
+        console.log(on);
+        //调用进去识别用哪个绑定方法，继而触发事件
+        on(oBtn,"click",fn1);
+        console.log(on);
+    </script>
+</body>
+</html>

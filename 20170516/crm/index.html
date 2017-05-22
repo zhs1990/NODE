@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h3>CRM管理系统</h3>
+    <a href="addUser.html" class="add">增加</a>
+    <p>
+        <span>序号</span>
+        <span>姓名</span>
+        <span>年龄</span>
+        <span>操作</span>
+    </p>
+    <ul id="list">
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>张红爽</span>-->
+            <!--<span>28</span>-->
+            <!--<span>-->
+                <!--<a href="javascript:;">修改</a>-->
+                <!--<a href="javascript:;">删除</a>-->
+            <!--</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>张红爽</span>-->
+            <!--<span>28</span>-->
+            <!--<span>-->
+                <!--<a href="javascript:;">修改</a>-->
+                <!--<a href="javascript:;">删除</a>-->
+            <!--</span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>张红爽</span>-->
+            <!--<span>28</span>-->
+            <!--<span>-->
+                <!--<a href="javascript:;">修改</a>-->
+                <!--<a href="javascript:;">删除</a>-->
+            <!--</span>-->
+        <!--</li>-->
+    </ul>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        var oList = document.getElementById("list");
+        getData(bindData);
+        function getData(cb){
+            $.ajax({
+                url:"/getAllUser",
+                type:"GET",
+                dataType:"json",
+                success:function(result){
+                    cb(result);
+                }
+            });
+        }
+        function bindData(data){
+            var str = "";
+            for(var i=0;i<data.data.length;i++){
+                str+=`
+                     <li>
+                        <span>${data.data[i].id}</span>
+                        <span>${data.data[i].name}</span>
+                        <span>${data.data[i].age}</span>
+                        <span>
+                            <a href="updata.html?uid=${data.data[i].id}">修改</a>
+                            <a href="javascript:;" class="deletaData" uid="${data.data[i].id}">删除</a>
+                        </span>
+                    </li>
+                   `;
+            }
+            oList.innerHTML = str;
+            var aDel = document.getElementsByClassName("deletaData");
+
+            for(var i=0;i<aDel.length;i++){
+                aDel[i].onclick = function(){
+                    deleteData(this);
+                };
+            }
+            function deleteData(obj){
+                var uid = obj.getAttribute("uid");
+                $.ajax({
+                    url:"/deleteUserData",
+                    type:"POST",
+                    dataType:"json",
+                    data:{
+                        id:uid
+                    },
+                    success:function(result){
+                        if(result&&result.error===0){
+                            alert(result.msg);
+                            oList.removeChild(obj.parentNode.parentNode);
+                        }else{
+                            alert(result.msg)
+                        }
+                        console.log(result);
+                    }
+                });
+            };
+        }
+
+    </script>
+</body>
+</html>

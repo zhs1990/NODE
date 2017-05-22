@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h3>CRM用户系统</h3>
+    <a href="addUser.html" class="add">增加</a>
+    <p>
+        <span>id</span>
+        <span>name</span>
+        <span>email</span>
+        <span>操作</span>
+    </p>
+    <ul id="list">
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>react</span>-->
+            <!--<span>reac</span>-->
+            <!--<span><a href="javascript:;">删除</a></span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>react</span>-->
+            <!--<span>react</span>-->
+            <!--<span><a href="javascript:;">删除</a></span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>react</span>-->
+            <!--<span>react</span>-->
+            <!--<span><a href="javascript:;">删除</a></span>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<span>1</span>-->
+            <!--<span>react</span>-->
+            <!--<span>react</span>-->
+            <!--<span><a href="javascript:;">删除</a></span>-->
+        <!--</li>-->
+    </ul>
+    <script src="ajax.js"></script>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oList = document.getElementById("list");
+
+        //获取数据
+        ajax({
+            url:"/getUserData",
+            type:"GET",
+            cache:true,
+            aaync:true,
+            dataType:"json",
+            success:function(result){
+                if(result&&result.error===0){
+                    bindData(result);
+                }
+            }
+        });
+        function bindData(data){
+            for(var i=0;i<data.data.length;i++){
+                oList.innerHTML+="<li><span>"+data.data[i].id+"</span><span>"+data.data[i].name+"</span><span>"+data.data[i].tel+"</span><span><a href="+"javascript:;"+">删除</a></span></li>"
+            }
+        }
+    </script>
+</body>
+</html>

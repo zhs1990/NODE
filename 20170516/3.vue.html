@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        {{ title }}
+    </div>
+    <div id="box2">
+        {{ title }}
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //通常一个页面只生成一个实例
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                title:"my name is box"
+            }
+        });
+        var vm2 = new Vue({
+            el:"#box2",
+            data:{
+                title:"my name id box2"
+            }
+        });
+    </script>
+</body>
+</html>

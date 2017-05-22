@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container" id="box">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <caption class="h3 text-center">商品信息</caption>
+                    <tr>
+                        <th class="text-center">商品名称</th>
+                        <th class="text-center">商品价格</th>
+                        <th class="text-center">商品数量</th>
+                        <th class="text-center">商品小计</th>
+                        <th class="text-center">商品操作</th>
+                    </tr>
+                    <tr class="text-center" v-for="item in products">
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td><input type="number" min="0" v-model="item.count" /></td>
+                        <td>{{item.price*item.count}}</td>
+                        <td><button class="btn btn-danger" @click="remove(item)">删除</button></td>
+                    </tr>
+                    <tr class="text-center">
+                        <td>商品总计</td>
+                        <td colspan="4">{{sum()}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="username" class="control-label">商品名称</label>
+                <input type="text" class="form-control" id="username" v-model="newPro.name">
+            </div>
+            <div class="form-group">
+                <label for="tel" class="control-label">商品价格</label>
+                <input type="text" class="form-control" id="tel" v-model="newPro.price">
+            </div>
+            <div class="form-group">
+                <label for="price" class="control-label">商品数量</label>
+                <input type="text" class="form-control" id="price" v-model="newPro.count">
+            </div>
+            <button type="button" class="btn btn-success" @click="add">添加商品</button>
+        </form>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                products:[
+                    {name:"Vue",price:30,count:50},
+                    {name:"Vue",price:30,count:50},
+                    {name:"Vue",price:30,count:50},
+                    {name:"Vue",price:30,count:50},
+                    {name:"Vue",price:30,count:50}
+                ],
+                newPro:{
+                    name:"",
+                    price:"",
+                    count:""
+                }
+            },
+            methods:{
+                remove:function(user){
+                    this.products = this.products.filter(function(item){
+                        return item!=user;
+                    });
+                },
+                sum:function(){
+                    var total = 0;
+                    for(var i=0;i<this.products.length;i++){
+                        var curNum = this.products[i];
+                        total+=curNum.price*curNum.count;
+                    }
+                    return total;
+                },
+                add:function(){
+                    if(this.newPro.name&&this.newPro.count&&this.newPro.price){
+                        this.products.push(this.newPro);
+                        this.newPro = {name:"",price:"",count:""};
+                    }else{
+                        alert("请填写完整信息");
+                    }
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>

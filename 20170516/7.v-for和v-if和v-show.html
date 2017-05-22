@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <!--
+                v-for
+                    要循环谁，就把v-for写在谁身上
+                    in可以换成of
+                        v-for="val of arr"
+                    获取索引值
+                        遍历数组
+                            v-for="(每一项内容,每一项索引) in arr"
+                        遍历json对象
+                            v-for="(属性值,属性名) in json"
+                        遍历二维数组（既包含数组有包含对象）
+                            item代表数组中的每一项
+                            <li v-for="item in result">{{item.name}}:{{item.age}}</li>
+
+             -->
+            <li v-for="(val,id) in arr">索引：{{id}} --- 值：{val}}</li>
+        </ul>
+        <p v-for="(val,key) in json">{{key}}:{{val}}</p>
+        <ol>
+            <li v-for="item in result">{{item.name}}:{{item.age}}</li>
+        </ol>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                arr:[11,22,33,44,55],
+                json:{
+                    name:"zhs",
+                    age:28,
+                    sex:"女"
+                },
+                result:[
+                    {name:123,age:20},
+                    {name:456,age:22},
+                    {name:789,age:33},
+                    {name:1233,age:11}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

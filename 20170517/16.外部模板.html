@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <my-html></my-html>
+        <my-html></my-html>
+        <my-html></my-html>
+        <my-html></my-html>
+        <my-html></my-html>
+
+        <my-zhs></my-zhs>
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var str = "";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET","./index.temp",false);
+        xhr.onreadystatechange = function(){
+            if(this.readyState===4&&/^2\d{2}$/.test(this.status)){
+                str = this.response;
+            }
+        };
+        xhr.send();
+        Vue.component("my-html",{
+            template:str,
+            methods:{
+                say:function(){
+                    alert(1);
+                }
+            },
+            data:function(){
+                return {title:"哈哈哈"}
+            }
+        });
+        new Vue({
+            el:"#box",
+            components:{
+                "my-zhs":{
+                    template:"<h1>你好</h1>"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

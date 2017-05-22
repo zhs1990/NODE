@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    action  接口地址
+    method  提交方式
+        get
+        post
+
+    阻止表单默认提交行为
+        oForm.onsubmit = function(){
+            return false;
+        };
+-->
+    <form method="get" action="/submitData">
+        <label for="user">用户名:</label><input name="username" type="text" id="user"><br><br>
+        <label for="pwd">密 码：</label><input name="pwd" type="text" id="pwd"><br><br>
+        <button type="submit">提交</button>
+    </form>
+</body>
+</html>

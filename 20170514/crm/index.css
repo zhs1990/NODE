@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+h3{
+    text-align:center;
+    width:404px;
+    margin: 20px auto;
+}
+p{
+    width:404px;
+    overflow: hidden;
+    border:1px solid #000;
+    border-right:none;
+    margin:20px auto;
+    background-color: #7ee0ff;
+}
+p span,li span{
+    float: left;
+    width:100px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    border-right:1px solid black;
+}
+ul{
+    width:404px;
+    height:auto;
+    line-height:30px;
+    border:1px solid #000;
+    border-right: none;
+    border-bottom: none;
+    margin: 0 auto;
+    overflow: hidden;
+}
+li{
+    overflow: hidden;
+    width:404px;
+    border-bottom: 1px solid #000;
+}
+.add{
+    padding:5px 10px;
+    text-align: center;
+    display: block;
+    text-decoration:none;
+    color:red;
+}

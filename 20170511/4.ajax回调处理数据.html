@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        getData(function(data){
+            console.log(data);
+        });
+        function getData(callback){
+            var xhr = new XMLHttpRequest();
+            xhr.open("get","./data1.json",false);
+            xhr.onreadystatechange = function(){
+                if(this.readyState===4 && /^2\d{2}$/.test(this.status)){
+                    typeof callback === "function" ? callback(this.responseText):null;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

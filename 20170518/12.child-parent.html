@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <p>计数:{{count}}</p>
+        <btn v-on:addone="answer"></btn>
+        <btn v-on:addone="answer"></btn>
+        <btn v-on:addone="answer"></btn>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                count:0
+            },
+            components:{
+                btn:{
+                    template:"<button @click='add'>{{total}}</button>",
+                    data:function(){
+                        return {total:0};
+                    },
+                    methods:{
+                        add:function(){
+                            this.total++;
+                            this.$emit("addone");
+                        }
+                    }
+                }
+            },
+            methods:{
+                answer:function(){
+                    this.count++;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

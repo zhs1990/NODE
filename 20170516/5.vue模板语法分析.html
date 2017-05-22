@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">{{ title }}</div>
+    <script>
+        var oBox = document.getElementById("box");
+        var title = "hello world";
+        var reg = /\{\{(.*)\}\}/;
+        var html = oBox.innerHTML;
+        html = html.replace(reg,function(){
+            console.log(arguments[1]);
+            return eval(arguments[1]);
+        });
+        oBox.innerHTML = html;
+    </script>
+</body>
+</html>

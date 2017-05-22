@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>张红爽：</h3>
+        <prev></prev>
+        <h3>佟璐：</h3>
+        <next></next>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var cpc = new Vue();
+        var prev = {
+            template:"<div><input type='text' v-model='message' @keyup.enter='send'> <button @click='send'>发送给佟璐</button></div>",
+            data:function(){
+              return {message:"waiting"}
+            },
+            methods:{
+                send:function(){
+                    cpc.$emit("mes",this.message);
+                }
+            }
+        };
+        var next = {
+            mounted:function(){
+                cpc.$on("mes",this.listen);
+            },
+            template:"<div><p>{{result}}</p></div>",
+            data:function(){
+                return {result:"等待结果"};
+            },
+            methods:{
+                listen:function(val){
+                    this.result = val.toUpperCase();
+                }
+            }
+        };
+        new Vue({
+            el:"#box",
+            components:{
+                prev:prev,
+                next:next
+            }
+        });
+    </script>
+</body>
+</html>

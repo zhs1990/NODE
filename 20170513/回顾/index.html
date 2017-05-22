@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" id="btn" value="获取数据" />
+    <p id="text"></p>
+    <script src="ajax.js"></script>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var oText = document.getElementById("text");
+
+        oBtn.onclick = getData;
+
+        function getData(){
+            ajax({
+                url:"/getData",
+                type:"GET",
+                async:true,
+                cache:true,
+                data:{
+                    id:10,
+                    name:"zhs"
+                },
+                dataType:"json",
+                success:function(data){
+                    oText.innerHTML = data.name+":"+data.age;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+/getAllUser   获取所有数据
+
+/getUserInfor 获取单个用户信息
+
+/addUserData  添加信息
+        返回信息 {error:0,msg:"添加成功/添加失败"}
+
+/deleteUserData 删除信息
+
+/updateUserData

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            background: red;
+            padding: 100px;
+        }
+        .inner{
+            padding:50px;
+            background: green;
+        }
+        .center{
+            background: yellow;
+            padding:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer" @click.capture="outer" id="box">
+        <div class="inner" @click.capture="inner">
+            <div class="center" @click.capture="center"></div>
+        </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            methods:{
+                outer:function(){
+                    console.log("outer");
+                },
+                inner:function(){
+                    console.log("inner");
+                },
+                center:function(){
+                    console.log("center");
+                }
+            }
+        });
+    </script>
+</body>
+</html>

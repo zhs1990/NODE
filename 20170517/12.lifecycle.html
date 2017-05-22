@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <p>{{title}}</p>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                title:"hello vue.js"
+            },
+            beforeCreate:function(){
+                alert("实例创建前");
+            },
+            created:function(){
+                alert(this.title);
+                alert("实例创建完成");
+            },
+            beforeMount:function(){
+                alert("数据挂载前");
+            },
+            mounted:function(){
+                alert("数据挂载完成");
+            },
+            beforeDestroy:function(){
+                alert("销毁前");
+            },
+            destroyed:function(){
+                alert("销毁完成");
+            },
+            beforeUpdate:function(){
+                alert("更新前");
+            },
+            updated:function(){
+                alert("更新完成");
+            }
+        });
+        setTimeout(function(){
+            //vm.$destroy();
+            vm.title = "zhs";
+        },3000);
+    </script>
+</body>
+</html>

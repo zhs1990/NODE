@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <!--<child mess="哈哈"></child>-->
+        <!--<child :mess="true"></child>-->
+        <child :mess="100"></child>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            components:{
+                child:{
+                    props:{
+                        mess:{
+                            //type:Boolean,
+                            type:[Boolean,String,Number],
+                            //default:"默认值",
+                            required:true,
+                            validator:function(val){
+                                console.log(val);
+                                return val>10;
+                            }
+                        }
+                    },
+                    template:"<div><h3>{{mess}}</h3></div>",
+
+                }
+            }
+        });
+    </script>
+</body>
+</html>

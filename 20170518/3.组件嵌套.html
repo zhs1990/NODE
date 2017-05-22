@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //根实例被称之为父组件
+        new Vue({
+            el:"#box",
+            //如果根实例没有指定模板，默认会将div#box作为模板，如果定义了template模板，会将模板渲染在界面上，会替换div#Box
+            template:"<div><h3>父组件图书商城</h3><child></child><child></child></div>",
+            components:{
+                child:{
+                    //可以将子组件模板直接放入父组件模板中
+                    template:"<div><h4>子组件图书列表</h4><book1></book1><book2></book2></div>",
+                    components:{
+                        book1:{
+                            template:"<p>署名：vue.js <end></end></p>",
+                            components:{
+                                end:{
+                                    template:"<div><button>购买</button></div>"
+                                }
+                            }
+                        },
+                        book2:{
+                            template:"<p>署名：react.js<end></end></p>",
+                            components:{
+                                end:{
+                                    template:"<div><button>购买</button></div>"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

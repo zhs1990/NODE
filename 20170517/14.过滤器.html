@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        {{message | uppercase}}
+        {{num | dollar("￥")}}
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //自定义过滤器
+        function formatNum(num) {
+            let num1 =  String(num.toFixed(2));
+            return  num1.replace(/(\d)(?=(\d{3})+(\.|$))/g,'$1,')
+        }
+        Vue.filter("dollar",function(val,s){
+            return s+formatNum(val);
+        });
+        Vue.filter("uppercase",function(val){
+            console.log(arguments);
+            return val.toUpperCase();
+        });
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                message:"hello world",
+                num:1000000000
+            }
+        });
+
+    </script>
+</body>
+</html>

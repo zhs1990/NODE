@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="obj" @keyup.enter="add">
+        <ul>
+            <li v-for="item in list">{{item}}</li>
+        </ul>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                list:["react","node","vue"],
+                obj:''
+
+            },
+            methods:{
+                add:function(){
+                    if(this.obj){
+                        this.list.push(this.obj);
+                        this.obj = "";
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

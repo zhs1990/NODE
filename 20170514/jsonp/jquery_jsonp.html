@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $.ajax({
+            url:"http://127.0.0.1:7000/getTime?cb=getTime",
+            type:"GET",
+            dataType:"jsonp",
+            jsonp:"cb",
+            success:function(result){
+                console.log(result);
+                document.body.innerHTML = result;
+            }
+        });
+//        var oScript = document.createElement("script");
+//        oScript.src = "http://127.0.0.1:3000/getTime?cb=getTime";
+//        document.body.appendChild(oScript);
+        function getTime(result){
+            console.log(result);
+        }
+    </script>
+</body>
+</html>

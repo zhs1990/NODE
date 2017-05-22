@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>老大</h3>
+        <prevsibling></prevsibling>
+        <h4>老二</h4>
+        <nextsibling></nextsibling>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //$emit发布     $on监听
+        let cpc = new Vue(); //中间人，负责传递数据
+        var prevsibling = {
+            template:"<div><button @click='say'>老大说</button></div>",
+            methods:{
+                say:function(){
+                    cpc.$emit("warning","我是老大，你得听我的");
+                }
+            }
+        };
+        var nextsibling = {
+            mounted:function(){
+                cpc.$on("warning",this.listen); //在数据挂载完成之后，开始监听
+            },
+            data:function(){
+                return {message:"等待通知"};
+            },
+            template:"<div><p>接收到的通知:{{message}}</p></div>",
+            methods:{
+                listen:function(val){
+                    this.message = val;
+                }
+            }
+        };
+        new Vue({
+            el:"#box",
+            components:{
+                prevsibling:prevsibling,
+                nextsibling:nextsibling
+            }
+        });
+    </script>
+</body>
+</html>
