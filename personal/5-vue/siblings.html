@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div id="box">
+        <prev></prev>
+        <next></next>
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        var cpc = new Vue();
+        new Vue({
+            el:"#box",
+            components:{
+                prev:{
+                    template:"<div><h3>老大说</h3><input type='text' v-model='words'><button @click='send'>发送</button></div>",
+                    data:function(){
+                        return {words:"你是傻子"};
+                    },
+                    methods:{
+                        send:function(){
+                            cpc.$emit("saysomthing",this.words);
+                        }
+                    }
+                },
+                next:{
+                    mounted:function(){
+                        cpc.$on("saysomthing",this.getResult);
+                    },
+                    template:"<div><h4>老二接受</h4><input type='text' v-model='result'></div>",
+                    data:function(){
+                        return {result:""};
+                    },
+                    methods:{
+                        getResult:function(val){
+                            this.result = val;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div id="box">
+        <h3>我是父组件</h3>
+        <input type="text" v-model="val" />
+        <child :mess="val"></child>
+    </div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            val:null
+        },
+        components:{
+            child:{
+                props:{
+                    mess:{
+                        type:[Number,String],
+                    }
+                },
+                template:"<div><h3>我是子组件</h3><input type='text' v-model='mess'></div>"
+            }
+        }
+    });
+</script>
 </body>
 </html>

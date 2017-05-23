@@ -934,10 +934,157 @@
                      <footer>头部</footer>
                  </child>
 
+20170523
+    is  指定模板（组件）插入位置  需要与<component is="组件名"></component>配合使用
+        <component is="users"></component>  users是字符串
+        <component :is="comp"></component>  comp是变量名
 
+        keep-alive  缓存组件状态，避免每一次切换组件重新渲染
+        <keep-alive>
+            <component :is="comp"></component>
+        </keep-alive>
 
+        new Vue({
+            el:"#box",
+            data:{
+                comp:"users",
+            },
+            components:{
+                users:{
+                    template:"<div><input type='text' v-model='val'></div>",
+                    data:function(){
+                        return {val:"hello user"};
+                    }
+                },
+                books:{
+                    template:"<div><input type='text' v-model='val'></div>",
+                    data:function(){
+                        return {val:"hello books"};
+                    }
+                }
+            }
+        });
 
+    vue插件
+        vue全家桶
+            vue-cli 脚手架
+            vue2
+            vue-resource
+            vue-router
+            vuex    管理vue组件状态
+            基于vue的ui
 
+        vue-resourse    请求数据
+            全局中请求:Vue.http
+            局部中请求:实例.$http
+
+            get请求
+                this.$http.get(url,{params:{key:value}).then(success,error);
+                    this指向当前实例
+            post请求
+                this.$http.post(url,{key:value}).then(success,error);
+            jsonp跨域请求
+                this.$http.get(url,{params:{
+                    key:value,
+                    jsonp:"cb",     cd=函数名，默认函数名是callback
+                    jsonpCallback:"fn"  指定函数名是什么
+                }).then(success,error);
+                可以自定义函数名称，与后台接口要一致
+    vue过渡动画
+        animate.css 动画库
+        动画名称-enter  指定进入过渡开始状态
+        动画名称-enter-active   指定进入过渡激活结束状态
+        动画名称-leave  指定离开过渡开始状态
+        动画名称-leave-active   指定离开过渡结束状态
+        使用方式：
+            .name-enter{
+                opacity:0;
+            }
+            .name-enter-active{
+                transition:all 0.5s;
+            }
+        <transition name="动画名称">
+            将需要动画的内容放在transition标签中
+        </transition>
+
+    vue中使用animate.css自定义动画
+        enter-active-class后面指定animate.css中的进入动画class名称即可
+        leave-active-class后面指定animate.css中的退出动画class名称即可
+        <transition enter-active-class="animated hinge"  leave-active-class="animated hinge">
+            <h3 v-show="flag">这是结合animate.css的自定义动画</h3>
+        </transition>
+
+    vue-router  路由
+        什么是路由？
+            在一个页面中，根据切换导航展示相应内容，局部刷新，不需要跳转，重新加载整个页面
+            spa 使用路由实现单页应用:所有事情都在一个页面中操作
+
+            配置路由导航布局
+                <router-link to="路由路径">导航名称</router-link>  -----  其实就是a标签
+                <router-view></router-view>     路由视图
+
+            路由创建步骤
+                1,创建组件
+                    let 组件名称 = {
+                        template:"模板内容"
+                    };
+                2,配置路由表  路由规则   路由路径映射组件  必须是数组
+                    var routes = [
+                        {path:"路由路径",component:组件名称},
+                        {path:"*",redirect:"/index"} 重定向到存在的路径，默认显示的路由，*代表除以上路径的所有路径
+                    ];
+                3,创建路由实例
+                    let VRouter = new VueRouter({
+                        routes:路由规则数组名
+                    });
+                4,在根实例中注入路由  router:将创建的路由实例赋给根实例即可
+                      new Vue({
+                          el:"#box",
+                          router:VRouter
+                      });
+
+            路由嵌套，可以通过template标签
+                <template id="index">
+                    <div>
+                        <h3>这是首页内容</h3>
+                        <h3>子路由</h3>
+                        <nav>
+                            <router-link to="/index/text1">子路由1</router-link>
+                            <router-link to="/index/text2">子路由2</router-link>
+                            <router-link to="/index/text3">子路由3</router-link>
+                        </nav>
+                        <router-view></router-view>
+                    </div>
+                </template>
+                1,引入模板组件,创建子路由组件
+                    let Index = {
+                        template:"#index"
+                    };
+                2,创建路由规则
+                    let routes = [
+                        {
+                            path:"/index",
+                            component:Index,
+                            children:[
+                                {path:"text1",component:Text1},
+                                {path:"text2",component:Text2},
+                                {path:"text3",component:Text3}
+                            ]
+                        },
+                        {path:"/news",component:News},
+                        {path:"/images",component:Images},
+                        {path:"/music",component:Music},
+                        {path:"*",redirect:"/index/text1"}
+                    ];
+                3,创建路由实例
+                    let Vrouter = new VueRouter({
+                        routes:routes
+                    });
+                4,在根实例中注入路由
+                    new Vue({
+                        el:"#box",
+                        router:Vrouter
+                    });
 
 
 

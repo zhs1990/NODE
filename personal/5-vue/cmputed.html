@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div id="box">
+        <h3>商品信息</h3>
+        商品名称：<input type="text" v-model="title"> <br><br>
+        商品价格：<input type="number" min="0" v-model="price" /> <br><br>
+        商品数量：<input type="number" min="0" v-model="count" /> <br><br>
+        商品总计：<input type="text" v-model="calc">
+    </div>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                title:"Vue",
+                price:10,
+                count:10
+            },
+            computed:{
+                calc:{
+                    get:function(){
+                        return this.price*this.count;
+                    },
+                    set:function (val) {
+                        this.count = val/this.price;
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
