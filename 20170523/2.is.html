@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>is</h3>
+        users:<input type="radio" value="users" v-model="comp">
+        books: <input type="radio" v-model="comp" value="books">
+        <keep-alive>
+            <component :is="comp"></component>
+        </keep-alive>
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //is 指定模板（组件）插入位置  需要与<component is="组件名"></component>配合使用
+        new Vue({
+            el:"#box",
+            data:{
+                comp:"users",
+            },
+            components:{
+                users:{
+                    template:"<div><h3>{{val}}</h3><input type='text' v-model='val'></div>",
+                    data:function(){
+                        return {val:"hello user"};
+                    }
+                },
+                books:{
+                    template:"<div><h3>{{val}}</h3><input type='text' v-model='val'></div>",
+                    data:function(){
+                        return {val:"hello books"};
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

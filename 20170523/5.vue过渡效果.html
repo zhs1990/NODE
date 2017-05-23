@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fade-enter{
+            opacity:0;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition:all 0.5s;
+        }
+        .fade-leave-active{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="flag=!flag">显示/隐藏</button>
+        <!--
+            name-enter  指定过渡开始状态
+            name-enter-active   指定过去激活结束状态
+            name-leave  指定离开过渡开始状态
+            name-leave-active   指定离开过渡结束状态
+        -->
+        <transition name="fade">
+            <div v-show="flag" :style="styleObj">11</div>
+        </transition>
+
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //v-if
+        //v-show
+        //组件切换
+        new Vue({
+            el:"#box",
+            data:{
+                flag:false,
+                styleObj:{
+                    width:"100px",
+                    height:"100px",
+                    background:"red"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

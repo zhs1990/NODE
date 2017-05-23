@@ -1,0 +1,12 @@
+{
+    "error":0,
+    "msg":"success",
+    "users":[
+        {"id":1,"name":"vue"},
+        {"id":2,"name":"react"},
+        {"id":3,"name":"javascript"},
+        {"id":4,"name":"css"},
+        {"id":5,"name":"html"},
+        {"id":6,"name":"java"}
+    ]
+}

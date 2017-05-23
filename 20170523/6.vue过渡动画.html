@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*进入动画*/
+        @keyframes bounceIn {
+            0%{
+                transform:scale(0);
+            }
+            50%{
+                transform: scale(1.5);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        /*退出动画*/
+        @keyframes bounceOut {
+            0%{
+                transform:scale(1);
+            }
+            50%{
+                transform: scale(1.5);
+            }
+            100%{
+                transform: scale(0);
+            }
+        }
+        .fade-enter-active{
+            animation: bounceIn 1s;
+        }
+        .fade-leave-active{
+            animation: bounceOut 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button @click="flag=!flag">切换</button>
+        <transition name="fade">
+            <div :style="styleObj" v-show="flag"></div>
+        </transition>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                flag:false,
+                styleObj:{
+                    width:"100px",
+                    height:"100px",
+                    background:"red",
+                    margin:"200px auto"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

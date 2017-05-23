@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box nav .router-link-active{
+            font-size: 20px;
+            text-decoration: none;
+        }
+        #box .box .router-link-active{
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <nav>
+        <router-link to="/index/text1">首页</router-link>
+        <router-link to="/news">新闻</router-link>
+        <router-link to="/images">图片</router-link>
+        <router-link to="/music">音乐</router-link>
+    </nav>
+
+    <router-view></router-view>
+
+</div>
+<template id="index">
+    <div>
+        <h3>这是首页内容</h3>
+        <h3>子路由</h3>
+        <nav>
+            <router-link to="/index/text1">子路由1</router-link>
+            <router-link to="/index/text2">子路由2</router-link>
+            <router-link to="/index/text3">子路由3</router-link>
+        </nav>
+        <router-view></router-view>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let Index = {
+        template:"#index"
+    };
+    let News = {
+        template:"<div><h3>这是新闻内容</h3></div>"
+    };
+    let Music = {
+        template:"<div><h3>这是音乐内容</h3></div>"
+    };
+    let Images = {
+        template:"<div><h3>这是图片内容</h3></div>"
+    };
+
+    //创建子路由组件
+    let Text1 = {
+        template:"<div class='box'><h3>go to 子路由   text1</h3></div>"
+    };
+    let Text2 = {
+        template:"<div class='box'><h3>go to 子路由   text2</h3></div>"
+    };
+    let Text3 = {
+        template:"<div class='box'><h3>go to 子路由   text3</h3></div>"
+    };
+    let routes = [
+        {
+            path:"/index",
+            component:Index,
+            children:[
+                {path:"text1",component:Text1},
+                {path:"text2",component:Text2},
+                {path:"text3",component:Text3}
+            ]
+        },
+        {path:"/news",component:News},
+        {path:"/images",component:Images},
+        {path:"/music",component:Music},
+        {path:"*",redirect:"/index/text1"}
+    ];
+
+    let Vrouter = new VueRouter({
+        routes:routes
+    });
+    new Vue({
+        el:"#box",
+        router:Vrouter
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div{
+            width:300px;
+            height: 100px;
+            background: #ccc;
+            text-align: center;
+            line-height:100px;
+            font-family:微软雅黑;
+        }
+        #box .title{
+            width:300px;
+            height:30px;
+        }
+        label{
+            width: 100px;
+            height:30px;
+            line-height:30px;
+            text-align: center;
+            background: pink;
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="title">
+            <label for="one">first</label><input hidden type="radio" value="first" v-model="which" id="one">
+            <label for="two">second</label><input hidden type="radio" value="second" v-model="which" id="two">
+            <label for="three">third</label><input hidden type="radio" value="third" v-model="which" id="three">
+        </div>
+        <component :is="which"></component>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                which:"first"
+            },
+            components:{
+                first:{
+                    template:"<div>选项卡一内容</div>"
+                },
+                second:{
+                    template:"<div>选项卡二内容</div>"
+                },
+                third:{
+                    template:"<div>选项卡三内容</div>"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

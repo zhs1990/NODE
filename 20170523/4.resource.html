@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h3>vue-resource-get</h3>
+        <button @click="getData2">GET请求</button>
+        <h3>vue-resource-post</h3>
+        <button @click="postData">POST请求</button>
+        <h3>vue-resource-jsonp</h3>
+        <button @click="jsonpData">跨域请求</button>
+        <h3>vue-resource-复合写法</h3>
+        <button @click="allData">复合写法请求</button>
+        <ul>
+            <li v-for="item in userList">{{item.id}}:{{item.name}}</li>
+        </ul>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+    <script>
+        // vue-resource 返回promise对象
+        //全局中时候Vue.http
+        new Vue({
+            el:"#box",
+            data:{
+                userList:null
+            },
+            methods:{
+                getData1:function(){
+                    //实例中是$http  get请求 url options {params}
+                    //this.$http.get(url,{params}).then(success,error);
+                    this.$http.get("./data.json",{params:{id:10,name:"珠峰"}})
+                        .then(function(res){
+                            console.log(res);
+                            if(res.body&&res.body.error===0){
+                                this.userList = res.body.users;
+                            }
+                        },function(error){
+                            console.log(error);
+                    });
+                },
+                getData2:function(){
+                    this.$http.get("./data.json",{params:{id:24,name:"函数"}}).then(response => {
+                        if(response.body&&response.body.error===0){
+                            this.userList = response.body.users;
+                        }
+                    },err => {
+                        console.log(err);
+                    });
+                },
+                postData:function(){
+                    this.$http.post("./data.json",{id:10,name:"珠峰"}).then(function(res){
+                        console.log(res);
+                        if(res.body&&res.body.error===0){
+                            this.userList = res.body.users;
+                        }
+                    },function(err){
+                        console.log(err);
+                    });
+                },
+                jsonpData:function(){
+                    this.$http.jsonp("http://127.0.0.1:8070/getData",{params:{id:24,name:"珠峰"}}).then(res => {
+                        if(res.body&&res.body.error===0){
+                            this.userList = res.body.users;
+                        }
+                    },err => {
+                        console.log(err);
+                    });
+                },
+                allData:function(){
+                    this.$http({
+                        url:"./data.json",
+                        method:"GET",
+                        data:{
+                            id:24,
+                            name:"珠峰"
+                        }
+                    }).then(res => {
+                        if(res.body&&res.body.error===0){
+                            this.userList = res.body.users;
+                        }
+                    },err => {
+                        console.log(err);
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

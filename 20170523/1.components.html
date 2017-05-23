@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <h2>{{title}}</h2>
+        <!--<zhs-component></zhs-component>-->
+        <!--<zhs-component></zhs-component>-->
+        <my-child></my-child>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script>
+        //  全局组件
+        Vue.component("zhs-component",{
+            template:"<div><h3 @click='say'>{{text}}</h3><input type='text' v-model='text'></div>",
+            data:function(){//每个组件都有属于组件自己的数据源对象
+                return {text:"你好，我是组件"};
+            },
+            methods:{
+                say:function(){
+                    alert(this.text);
+                }
+            }
+        });
+        new Vue({
+            el:"#box",
+            data:{
+                title:"hello vue.js"
+            },
+            components:{//局部组件
+                'my-child':{//组件名称是多个的时候，得用字符串包起来
+                    template:"<div><h1 @click='say'>{{title}}</h1></div>",
+                    data:function(){
+                        return {title:"你好，未来"};
+                    },
+                    methods:{
+                        say:function(){
+                            alert("hello");
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
