@@ -2,545 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55ff3404-b9c9-46da-b23b-97cd2e3269c0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/1.components.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/10.vue-router-bootstrap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/11.嵌套路由.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/2.is.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/3.选项卡-is.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/4.resource.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/5.vue过渡效果.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/6.vue过渡动画.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/7.animateCss.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/8.自定义动画vue animate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/9.vue-router.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/data.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/animate-config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/animate.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/gulpfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/_base.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/bounce.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/flash.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/headShake.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/jello.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/pulse.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/rubberBand.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/shake.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/swing.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/tada.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/attention_seekers/wobble.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_entrances/bounceIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_entrances/bounceInDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_entrances/bounceInLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_entrances/bounceInRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_entrances/bounceInUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_exits/bounceOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_exits/bounceOutDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_exits/bounceOutLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_exits/bounceOutRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/bouncing_exits/bounceOutUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInDownBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInLeftBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInRightBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_entrances/fadeInUpBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutDownBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutLeftBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutRightBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/fading_exits/fadeOutUpBig.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/flippers/flip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/flippers/flipInX.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/flippers/flipInY.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/flippers/flipOutX.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/flippers/flipOutY.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/lightspeed/lightSpeedIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/lightspeed/lightSpeedOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_entrances/rotateIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_entrances/rotateInDownLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_entrances/rotateInDownRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_entrances/rotateInUpLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_entrances/rotateInUpRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_exits/rotateOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_exits/rotateOutDownLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_exits/rotateOutDownRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_exits/rotateOutUpLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/rotating_exits/rotateOutUpRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_entrances/slideInDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_entrances/slideInLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_entrances/slideInRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_entrances/slideInUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_exits/slideOutDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_exits/slideOutLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_exits/slideOutRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/sliding_exits/slideOutUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/specials/hinge.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/specials/rollIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/specials/rollOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_entrances/zoomIn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_entrances/zoomInDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_entrances/zoomInLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_entrances/zoomInRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_entrances/zoomInUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_exits/zoomOut.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_exits/zoomOutDown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_exits/zoomOutLeft.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_exits/zoomOutRight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/animate.css/source/zooming_exits/zoomOutUp.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap-theme.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/css/bootstrap.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/dist/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/bs-commonjs-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/bs-glyphicons-data-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/bs-lessdoc-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/bs-raw-files-generator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/change-version.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/configBridge.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/npm-shrinkwrap.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/grunt/sauce_browsers.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/affix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/popover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/scrollspy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/js/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/badges.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/bootstrap.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/breadcrumbs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/button-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/carousel.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/close.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/code.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/component-animations.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/dropdowns.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/glyphicons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/input-groups.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/jumbotron.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/media.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/alerts.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/background-variant.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/border-radius.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/buttons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/center-block.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/clearfix.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/forms.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/gradients.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/grid-framework.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/grid.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/hide-text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/image.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/labels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/list-group.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/nav-divider.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/nav-vertical-align.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/opacity.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/progress-bar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/reset-filter.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/reset-text.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/resize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/responsive-visibility.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/size.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/tab-focus.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/table-row.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/text-emphasis.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/text-overflow.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/mixins/vendor-prefixes.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/modals.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/navbar.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/navs.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/normalize.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/pager.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/pagination.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/panels.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/popovers.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/print.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/progress-bars.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/responsive-embed.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/responsive-utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/scaffolding.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/tables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/theme.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/thumbnails.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/tooltip.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/type.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/utilities.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/less/wells.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/bootstrap/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/capture-stack-trace/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/capture-stack-trace/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/capture-stack-trace/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/create-error-class/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/create-error-class/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/create-error-class/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/create-error-class/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/duplexer3/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/duplexer3/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/duplexer3/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/duplexer3/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/get-stream/buffer-stream.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/get-stream/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/get-stream/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/get-stream/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/get-stream/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/got/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/got/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/got/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/got/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-redirect/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-redirect/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-redirect/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-redirect/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-retry-allowed/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-retry-allowed/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-retry-allowed/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-retry-allowed/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-stream/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-stream/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-stream/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/is-stream/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/lowercase-keys/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/lowercase-keys/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/lowercase-keys/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/prepend-http/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/prepend-http/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/prepend-http/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/prepend-http/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/browser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/safe-buffer/test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/timed-out/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/timed-out/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/timed-out/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/timed-out/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/unzip-response/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/unzip-response/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/unzip-response/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/unzip-response/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/url-parse-lax/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/url-parse-lax/license" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/url-parse-lax/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/url-parse-lax/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/.circleci/config.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/.github/ISSUE_TEMPLATE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/dist/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/dist/vue-resource.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/dist/vue-resource.es2015.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/dist/vue-resource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/dist/vue-resource.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/client/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/client/jsonp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/client/node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/client/xdr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/client/xhr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/headers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/before.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/cors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/header.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/json.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/jsonp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/interceptor/method.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/http/response.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/lib/promise.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/lib/url-template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/promise.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/resource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/url/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/url/query.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/url/root.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/url/template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/src/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/data/invalid.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/data/text.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/data/valid.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/http.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/http.test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/promise.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/resource.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/specs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/url.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/test/webpack.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-resource/yarn.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/dist/vue-router.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/dist/vue-router.esm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/dist/vue-router.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/dist/vue-router.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/components/link.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/components/view.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/create-matcher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/create-route-map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/history/abstract.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/history/base.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/history/hash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/history/html5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/install.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/async.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/dom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/location.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/params.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/path.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/push-state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/query.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/route.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/scroll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/src/util/warn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/types/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/types/router.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue-router/types/vue.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.esm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.runtime.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.runtime.esm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.runtime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/dist/vue.runtime.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/codegen/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/codegen/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/directives/bind.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/directives/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/error-detector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/helpers.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/optimizer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/parser/entity-decoder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/parser/filter-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/parser/html-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/parser/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/compiler/parser/text-parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/components/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/components/keep-alive.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/global-api/assets.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/global-api/extend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/global-api/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/global-api/mixin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/global-api/use.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/inject.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/lifecycle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/proxy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/bind-object-props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/check-keycodes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/render-list.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/render-slot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/render-static.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/resolve-filter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render-helpers/resolve-slots.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/render.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/instance/state.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/observer/array.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/observer/dep.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/observer/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/observer/scheduler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/observer/watcher.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/debug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/env.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/error.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/lang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/options.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/perf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/util/props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/create-component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/create-element.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/create-functional-component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/extract-props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/get-first-component-child.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/merge-hook.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/normalize-children.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/resolve-async-component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/helpers/update-listeners.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/modules/directives.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/modules/ref.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/patch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/core/vdom/vnode.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/directives/html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/directives/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/directives/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/modules/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/modules/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/compiler/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime-with-compiler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/class-util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/components/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/components/transition-group.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/directives/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/directives/show.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/attrs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/dom-props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/modules/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/node-ops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/patch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/runtime/transition-util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server-renderer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/directives/show.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/modules/attrs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/modules/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/modules/dom-props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/modules/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/server/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/attrs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/compat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/element.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/web/util/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/directives/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/modules/append.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/modules/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/modules/props.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/compiler/modules/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/framework.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime-factory.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/components/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/components/transition-group.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/components/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/directives/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/attrs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/style.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/modules/transition.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/node-ops.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/patch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/runtime/text-node.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/platforms/weex/util/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/bundle-renderer/create-bundle-renderer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/bundle-renderer/create-bundle-runner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/bundle-renderer/source-map-support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/create-renderer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/render-context.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/render-stream.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/render.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/template-renderer/create-async-file-mapper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/template-renderer/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/template-renderer/parse-template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/template-renderer/template-stream.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/webpack-plugin/client.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/webpack-plugin/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/webpack-plugin/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/server/write.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/sfc/parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/shared/constants.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/src/shared/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/types/index.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/types/options.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/types/plugin.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/types/vnode.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/node_modules/vue/types/vue.d.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/20170523/server.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/5-vue/child-parent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/5-vue/cmputed.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/5-vue/parent-child.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/personal/5-vue/siblings.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node知识点.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/知识点.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node笔记.txt" afterPath="$PROJECT_DIR$/node知识点.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/框架.txt" afterPath="$PROJECT_DIR$/知识点.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -561,22 +27,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="知识点.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/知识点.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="959" column="24" lean-forward="false" selection-start-line="959" selection-start-column="24" selection-end-line="959" selection-end-column="24" />
-              <folding />
+      <file leaf-file-name="node知识点.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node知识点.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="10713">
+                <caret line="626" column="8" lean-forward="false" selection-start-line="621" selection-start-column="4" selection-end-line="626" selection-end-column="8" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node知识点.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node知识点.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19309">
-              <caret line="613" column="24" lean-forward="false" selection-start-line="613" selection-start-column="24" selection-end-line="613" selection-end-column="24" />
-              <folding />
+      <file leaf-file-name="知识点.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/知识点.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="533">
+                <caret line="1095" column="24" lean-forward="false" selection-start-line="1092" selection-start-column="4" selection-end-line="1132" selection-end-column="11" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -615,8 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$USER_HOME$/Desktop/leader/张红爽.txt" />
-        <option value="$PROJECT_DIR$/20170521/global.js" />
         <option value="$PROJECT_DIR$/20170521/1.global.js" />
         <option value="$PROJECT_DIR$/20170521/process.js" />
         <option value="$PROJECT_DIR$/20170521/2.process.js" />
@@ -666,6 +140,8 @@
         <option value="$PROJECT_DIR$/20170523/10.vue-router-bootstrap.html" />
         <option value="$PROJECT_DIR$/知识点.txt" />
         <option value="$PROJECT_DIR$/20170523/README.md" />
+        <option value="$PROJECT_DIR$/node知识点.md" />
+        <option value="$PROJECT_DIR$/知识点.md" />
       </list>
     </option>
   </component>
@@ -734,15 +210,15 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="javascript.nodejs.core.library.configured.version" value="7.4.0" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="JavaScriptPreferStrict" value="false" />
@@ -894,12 +370,13 @@
       <workItem from="1495439668815" duration="2395000" />
       <workItem from="1495501085869" duration="13536000" />
       <workItem from="1495518882036" duration="6683000" />
-      <workItem from="1495529197498" duration="7089000" />
+      <workItem from="1495529197498" duration="7286000" />
+      <workItem from="1495538136213" duration="2602000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293630000" />
+    <option name="totallyTimeSpent" value="296429000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -914,23 +391,23 @@
     <frame x="-9" y="-9" width="1698" height="1020" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21489105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10048426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31461987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32865497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990316" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31461987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982457" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -971,20 +448,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/20170520/callback.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/20170521/node/1.global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="77" column="11" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="77" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/20170521/node/2.process.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -1151,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/20170523/1.components.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1260,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,6 +730,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="55" column="7" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/20170523/README.md" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node知识点.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="601" column="42" lean-forward="false" selection-start-line="601" selection-start-column="42" selection-end-line="601" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1288,19 +768,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/20170523/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/node知识点.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="10713">
+            <caret line="626" column="8" lean-forward="false" selection-start-line="621" selection-start-column="4" selection-end-line="626" selection-end-column="8" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node知识点.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19309">
-          <caret line="613" column="24" lean-forward="false" selection-start-line="613" selection-start-column="24" selection-end-line="613" selection-end-column="24" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/知识点.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="533">
+            <caret line="1095" column="24" lean-forward="false" selection-start-line="1092" selection-start-column="4" selection-end-line="1132" selection-end-column="11" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
         </state>
       </provider>
     </entry>
