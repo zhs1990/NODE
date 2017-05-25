@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <nav>
+        <router-link to="/index">首页</router-link>
+        <router-link to="/image">图片</router-link>
+        <router-link to="/news">新闻</router-link>
+
+    </nav>
+    <!---->
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let Index = {
+        template:"<div><h3 @click='say'>{{mess}}</h3><input type='text' value='hello index'></div>",
+        data:function(){
+            return {mess:"欢迎来到首页"}
+        },
+        methods:{
+            say:function(){
+                alert(this.mess);
+            }
+        }
+    };
+    let Image = {
+        template:"<div><h3>我是图片页</h3><input type='text' value='hello image'></div>"
+    };
+    let News = {
+        template:"<div><h3>我是新闻页</h3></div>"
+    };
+    let routes = [
+        {path:"/index",component:Index},
+        {path:"/image",component:Image},
+        {path:"/news",component:News},
+        {path:"*",redirect:"/index"}
+    ];
+    var VRouter = new VueRouter({
+        routes:routes
+    });
+    new Vue({
+        el:"#box",
+        router:VRouter
+    });
+</script>
+</body>
+</html>

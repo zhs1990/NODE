@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <!--命名路由  name代表相应的路径-->
+    <router-link :to="{name:'index', params:{uid:24},query:{user:'zhs'}}">首页</router-link>
+    <router-link :to="{name:'video', params:{uid:40},query:{user:'tl'}}">视频</router-link>
+    <router-view></router-view>
+</div>
+<template id="index">
+    <div><h3>{{mess}}</h3></div>
+</template>
+<template id="video">
+    <div><h3>{{mess}}</h3></div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let Index = {
+        template:"#index",
+        data:function(){
+            return {mess:"欢迎来到首页~"};
+        }
+
+    };
+    let Video = {
+        template:"#video",
+        data:function(){
+            return {mess:"欢迎来到视频页~"};
+        }
+    };
+    let routes = [
+        {path:"/index/:uid",name:"index",component:Index},
+        {path:"/video/:uid",name:"video",component:Video}
+    ];
+    var VRouter = new VueRouter({
+        routes:routes
+    });
+    new Vue({
+        el:"#box",
+        router:VRouter
+    });
+</script>
+</body>
+</html>

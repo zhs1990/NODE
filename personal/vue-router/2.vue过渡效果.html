@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .fade-enter{
+            opacity:0;
+        }
+        .fade-enter-active,.fade-leave-active{
+            transition:all 0.5s;
+        }
+        .fade-leave-active{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <button @click="flag=!flag">切换</button>
+    <transition name="fade">
+        <div :style="styleObj" v-show="flag">11</div>
+    </transition>
+
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:"#box",
+        data:{
+            flag:false,
+            styleObj:{
+                width:"100px",
+                height:"100px",
+                background:"red"
+            }
+        }
+    });
+</script>
+</body>
+</html>

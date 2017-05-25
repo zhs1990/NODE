@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <!--路径参数是动态的，随机的-->
+    <router-link to="/user/zhufeng">user</router-link>
+    <router-link to="/books/24">books</router-link>
+
+    <router-view></router-view>
+</div>
+<template id="user">
+    <div>
+        <h3>用户列表</h3>
+        <p>当前传递的ID {{$route.params.id}}</p>
+        <p>{{uid}}</p>
+    </div>
+</template>
+<template id="books">
+    <div>
+        <h3>图书列表</h3>
+        <p>当前传递的ID {{$route.params.id}}</p>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let User = {
+        template:"#user",
+        computed:{
+            uid:function(){
+                return this.$route.params.id;
+            }
+        }
+    };
+    let Books = {
+        template:"#books"
+    };
+    let routes = [
+        //: 指定是路由参数 id  被存储在$route.params:{ id: 参数 }  实例中使用是 this.route.params
+        {path:"/user/:id",component:User},
+        {path:"/books/:id",component:Books},
+    ];
+    let VRouter = new VueRouter({
+        routes:routes
+    });
+    new Vue({
+        el:"#box",
+        router:VRouter
+    });
+</script>
+</body>
+</html>

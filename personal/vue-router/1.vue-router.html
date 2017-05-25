@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+<div id="box">
+    <ul class="nav nav-pills">
+        <li role="presentation" :class="{active:flag==='index'}" @click="flag='index'">
+            <router-link to="/index">首页</router-link>
+        </li>
+        <li role="presentation" :class="{active:flag==='news'}" @click="flag='news'">
+            <router-link to="/news">新闻</router-link>
+        </li>
+        <li role="presentation" :class="{active:flag==='music'}" @click="flag='music'">
+            <router-link to="/music">音乐</router-link>
+        </li>
+    </ul>
+    <router-view></router-view>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let Index = {
+        template:"<div><h3>首页内容</h3></div>"
+    };
+    let News = {
+       template:"<div><h3>新闻页内容</h3></div>"
+    };
+    let Music = {
+       template:"<div><h3>音乐页内容</h3></div>"
+    };
+    let routes = [
+       { path:"/index", component:Index },
+       { path:"/news", component:News },
+       { path:"/music", component:Music },
+       { path:"*", redirect:"/index" }
+    ];
+    var VRouter = new VueRouter({
+       routes:routes
+    });
+    new Vue({
+        el:"#box",
+        router:VRouter,
+        data:{
+            flag:"index"
+        }
+    });
+</script>
+</body>
+</html>

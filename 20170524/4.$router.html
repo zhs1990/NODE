@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <!--路径参数是动态的，随机的-->
+    <router-link to="/">首页</router-link>
+    <router-link to="/user/20/zhufeng?name=vuejs">user</router-link>
+    <router-link to="/books/24/zhs">books</router-link>
+    <button @click="returnback">返回到首页</button>
+    <button @click="goBack">后退</button>
+    <button @click="goOn">前进</button>
+    <router-view></router-view>
+</div>
+<template id="user">
+    <div>
+        <h3>用户列表</h3>
+        <button @click="back">返回首页</button>
+        <p>当前传递的ID {{$route.params.id}}</p>
+        <p>当前传递的用户名 {{$route.params.user}}</p>
+        <p>{{mess}}</p>
+    </div>
+</template>
+<template id="books">
+    <div>
+        <h3>图书列表</h3>
+        <p>当前传递的ID {{$route.params.id}}</p>
+        <p>当前传递的用户名 {{$route.params.name}}</p>
+    </div>
+</template>
+<template id="index">
+    <div>
+        <h3>首页</h3>
+        <p>当前传递的ID {{$route.params.id}}</p>
+        <p>当前传递的用户名 {{$route.params.name}}</p>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let User = {
+        template:"#user",
+        data:function () {
+            return {mess:"首页欢迎你"}
+        },
+        computed:{
+            uid:function(){
+                //console.log(this.$route);
+                return this.$route.params.id;
+            }
+        },
+        methods:{
+            back:function(){
+                this.$router.push('/');
+            }
+        },
+        beforeRouteEnter:function(to,from,next){
+            //只有切换到当前的路由之前才会触发
+           // console.log(to);
+            //console.log(from);
+
+            //alert(to.params.id);
+            //next({path:"/books/24/zhs"});
+            next(function(vm){
+                //console.log(vm);
+                setTimeout(function(){
+                    vm.mess = "北京欢迎你";
+                },2000)
+            });
+
+
+        }
+    };
+    let Books = {
+        template:"#books"
+    };
+    let Index = {
+        template:"#index"
+    };
+    let routes = [
+        //: 指定是路由参数 id  被存储在$route.params:{ id: 参数 }  实例中使用是 this.route.params
+        {path:"/",component:Index},
+        {path:"/user/:id/:user",component:User},
+        {path:"/books/:id/:name",component:Books}
+    ];
+    let VRouter = new VueRouter({
+        routes:routes
+    });
+    var vm = new Vue({
+        el:"#box",
+        router:VRouter,
+        methods:{
+            returnback:function(){
+                //VRouter.push("/");
+            },
+            goBack:function(){
+                VRouter.go(-1);
+            },
+            goOn:function(){
+                VRouter.go(1);
+            }
+        }
+    });
+    //全局钩子函数  每一次切换之前都会触发
+//    VRouter.beforeEach(function(to,from,next){
+//
+//        //console.log(to);//要到哪个路径
+//        //console.log(from);//从哪个路径开始
+//        //next();//路由切换之前可以做权限验证，控制路由是否继续切换 ，控制是否继续执行，也可以传递参数
+//        if(to.path==="/"){
+//            alert("你没有用户权限");
+//            next({path:"/user/20/zhufeng"});
+//        }else{
+//            next();
+//        }
+//
+//    });
+</script>
+</body>
+</html>
