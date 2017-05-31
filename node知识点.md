@@ -627,6 +627,552 @@ process
         yarn add babel-core -dev
 
 
+# 第二周 http fs...
+## 20170528
+### Buffer
+buffer是十六进制的，读取的内容是二进制的，展现形式是十六进制
+- ff
+buffer中最大的是ff
+
+- 字节和位
+1个字节有8个位
+
+- 一个汉字有3个字节
+node只支持utf-8格式
+
+- 每个位中存放的都是二进制
+- 二进制中的1 等于10进制中的1
+- 当前位的最大值*2^(当前位值-1)进行累加 ^开方
+- 一个字节在十进制中，最大的是255
+- ff 15*16^1 + 15*16^0    16进制全部以0x开头，8进制是以0开头
+- 将十进制转换成16进制  10进制中的100转换成16进制是多少？0*64
+
+### 定义buffer
+
+- 1,通过长度创建buffer
+```
+buffer长度是固定的，创建之后不可随意改变
+var buffer = new Buffer(6);
+buffer.fill(0);     手动填充buffer，清空内存
+console.log(buffer);    通过长度长度创建的buffer，内容是随机的
+```
+- 2,通过数组创建buffer
+```
+var buffer = new Buffer([100,120,140]);
+如果数组中的某一个不能正确转换则是0
+如果超过255，则对256取膜
+如果写负数，则加上256
+var buffer = new Buffer(["a",120,140]);
+console.log(buffer);
+```
+- 3,通过字符串创建buffer
+```
+var buffer = new Buffer("珠峰培训");
+console.log(buffer);    通过汉字创建的buffer内容和汉字是对应的
+console.log(buffer.toString()); 将buffer格式转化成字符串
+console.log(buffer.length); buffer长度，字节的长度
+console.log(buffer[0]); 如果取buffer中的某一个则是16进制代表的10进制
+```
+
+### buffer方法
+- buffer.toString();
+- buffer.slice();  截取 包前不包后  也可以修改原有的buffer内容
+```
+buffer中存的也是内存地址，可以将buffer看成是一个二维数组,buffer
+var buffer = new Buffer([1,2,3]);
+var newBuffer = buffer.slice(0,1);
+console.log(buffer);
+newBuffer[0] = 100;
+console.log(buffer);
+```
+- buffer.copy();    copy,可以将小的buffer拷贝到大的buffer上
+```
+var buffer = new Buffer(12);
+var buf1 = new Buffer("珠峰");
+var buf2 = new Buffer("培训");
+目标buffer，目标的开始位置，源的开始，源的结束
+buf1.copy(buffer,buf2.length,0,buf1.length);
+buf2.copy(buffer,0,0,buf2.length);
+console.log(buffer.toString());
+```
+-  buffer.concat();  返回的还是buffer,如果不写长度，默认拼接后的长度，如果写的过长，多余的要截取掉,如果长度过小，则拷贝不进去
+```
+Buffer.concat([buf1,buf2],字节长度);
+```
+- 自定义buffer.concat
+```
+Buffer.myConcat = function(list,totalLength){
+    1，不传递长度的情况下，计算出一个总长度，根据计算出的长度构建一个大buffer
+    if(typeof totalLength === "undefined"){
+        totalLength = list.reduce((prev,next) => {
+            return prev+next.length;
+        },0);
+    }
+    2，如果传递长度，就按照传的长度来构建buffer  new Buffer()
+    var buffer = new Buffer(totalLength);
+    3，将list中的每一个buffer拷贝到大buffer中 copy()
+    var index = 0;
+    list.forEach(item => {
+        item.copy(buffer,index);
+        index+=item.length;
+    });
+    4，截取掉多余的长度  slice
+    return buffer.slice(0,index);
+};
+Buffer.myConcat([buf1,buf2],12);
+```
+
+### reduce
+```
+arr.reduce(); 收敛 返回叠加后的结果
+var total = [1,2,3,4].reduce(function(prev,next){
+    console.log(prev,next);
+    //return 100; //返回值会作为下一次的上一次prev结果
+    return prev+next;
+});//第二个参数 是手动指定第一次的上一次
+console.log(total);
+```
+
+### 如何拷贝一个对象  递归循环
+- 1,赋值形式
+```
+var obj = {name:1,age:2,a:function(){}};
+var obj2 = obj;
+console.log(obj);
+```
+
+- 2,JSON.parse(JSON.stringify(obj2))
+```
+var obj = {name:1,age:2,a:function(){}};
+var obj2 = JSON.parse(JSON.stringify(obj2));
+//stringify不识别函数
+```
+
+- 3,ES6拷贝对象
+```
+var obj1 = {};
+Object.assign(obj1,obj,{age:3});
+```
+
+## for of / for in / forEach区别  ---  面试题
+
+## 进制转换
+
+- 将任意进制转换成10进制 parseInt("111",2);
+- 将任意进制转换成任意进制  "123".toString(2);
+- console.log(~~1.5); 取整  ~~
+
+## fs
+### fs定义
+- fs 是一个核心模块，操作文件 目录 文件夹
+- fs里面的方法都是同步和异步同时出现，能用异步，不用同步
+
+### fs读取的特点
+- 1,读取的文件必须存在
+- 2,读出的类型默认都是buffer
+- 3,/ 代表根目录  当前文件所在的磁盘的根目录 ./ 相对当前文件的路径，可省略
+- 4,同步的结果永远都在返回值上，异步的结果在callback参数中
+- 5,不能读取比内存大的文件（不大于64k） (读取到的文件内容将会存在在内存中，太大会导致淹没可用内存)
+- 6,流可以边读边写
+
+### 同步方法读取文件
+```
+var school = {};
+var name = fs.readFileSync("./1.txt","utf-8");
+school.name = name;
+var say = fs.readFileSync("./2.txt","utf-8");
+school.say = say;
+console.log(school);
+```
+
+### 异步方法读取文件
+- 方法一:很多时候处理异步可以进行嵌套，可能会导致回调地域
+```
+var school = {};
+fs.readFile("./1.txt","utf-8",function(err,data){
+    //error-first 错误第一
+    if(err)console.log(err);
+    school.name = data;
+    fs.readFile("./2.txt","utf-8",function(err,data){
+        //error-first
+        if(err)console.log(err);
+        school.age = data;
+        console.log(school);
+    });
+});
+```
+- 方法二：索引解决 callback
+```
+var school = {};
+var index = 0;
+fs.readFile("./1.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.name = data;
+    index++;
+    out();
+});
+fs.readFile("./2.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.age = data;
+    index++;
+    out();
+});
+function out(){
+    if(index===2){
+        console.log(school);
+    }
+}
+```
+- 方法三：订阅发布模式
+```
+var school = {};
+fs.readFile("./1.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.name = data;
+    event.emit("输出");
+});
+fs.readFile("./2.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.age = data;
+    event.emit("输出");
+});
+function out(){
+    if(school.name&&school.age){
+        console.log(school);
+    }
+}
+event.on("输出",out);
+```
+- 方法四：发布订阅升级版
+```
+var school = {};
+fs.readFile("./1.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.name = data;
+    event.emit("输出");
+});
+fs.readFile("./2.txt","utf-8",function(err,data){
+    //error-first
+    if(err)console.log(err);
+    school.age = data;
+    event.emit("输出");
+});
+function out(){
+    //Object.keys(对象)  将对象转换成数组{name:1,age:2}  [name,age]
+    if(Object.keys(school).length===2){
+        console.log(school);
+    }
+}
+//订阅
+event.on("输出",out);
+```
+- 方法五：promise 有三个方法  resolve成功的回调  reject失败的回调  支持高版本浏览器
+```
+var school = {};
+function readName(){
+    return new Promise(function(resolve,reject){
+        fs.readFile("./1.txt","utf-8",function(err,data){
+            if(err)reject(err);
+            resolve(data);
+        });
+    })
+}
+// readName().then(function(data){//成功
+//     console.log(data);
+//     school.name = data;
+// }).catch(function(err){//失败
+//
+// });
+function readAge(){
+    return new Promise(function(resolve,reject){
+        fs.readFile("./2.txt","utf-8",function(err,data){
+            //error-first
+            if(err)reject(err);
+            resolve(data);
+        });
+    });
+}
+//all 方法是promise对象自带的，第一个参数是数组，数组放的是promise对象,并发执行
+Promise.all([readName(),readAge()]).then(([age,name]) => {//解构
+    //console.log(result);//result的结果顺序和数组中的顺序是一致的
+    school = {age,name};
+    console.log(school);
+});
+```
+
+## fs写入特点
+- 1，写入的内容会自动转化成utf8格式
+- 2，flag:"w"  清空，写入，仅写
+- 3, 如果第二个参数为空，文件中会出现undefined
+- 4，如果写入的是对象，要JSON.stringify
+
+### 同步写入方法
+```
+fs.writeFileSync(文件,写入内容，编码格式）; 
+```
+
+### 异步写入方法
+```
+fs.writeFile("./write.txt",JSON.stringify({name:2}),function(err){
+    if(err)console.log(err);
+});  
+```
+
+### 查看文件是否存在
+- 同步查看
+```
+此方法的返回值是布尔类型
+fs.existsSync(文件路径);
+```
+- 异步查看
+```
+fs.exists("文件路径",function(flag){
+    参数flag是布尔类型
+});
+```
+
+### 自定义copy
+- 同步copy
+
+```
+copySync("./write.txt","./write2.txt");
+function copySync(source,target){
+    let result = fs.readFileSync(source,"utf-8");
+    console.log(typeof result);
+    fs.writeFileSync(target,result);
+}
+```
+
+- 异步copy
+```
+copy("./write.txt","./write2.txt",function(err){
+    if(err)console.log(err);
+    console.log("写入成功");
+});
+function copy(source,target,cb){
+    fs.readFile(source,"utf-8",function(err,data){
+        if(err)console.log(err);
+        console.log(typeof data);
+        fs.writeFile(target,data,cb);
+    });
+}
+```
+
+## 创建目录
+- fs.mkdirSync();  同步
+### 同步创建目录 
+```
+let fs = require("fs");
+makeP("a/b/c/d");
+function makeP(url){
+    var arr = url.split("/");
+    for(var i=0;i<arr.length;i++){
+        var cur = arr.slice(0,i+1).join("/");
+        if(!fs.existsSync(cur)){
+            fs.mkdirSync(cur);
+        }
+    }
+}
+```
+### 异步创建目录
+```
+makeP("a/b/c/d",function(){
+    console.log("创建成功");
+});
+function makeP(url,callback){
+    //1,把url拆分成数组
+    //2,向有一个方法，调用方法先创建第一级，当创建完毕，再带哦用此方法依次创建
+    let arr = url.split("/");
+    let n = 0;
+    createF(arr[n]);
+    function createF(url){
+        if(n>=arr.length){
+            callback();
+            return;
+        }
+        fs.exists(url,function(flag){
+            if(!flag){
+                fs.mkdir(url,function(){
+                    createF(arr.slice(0,++n+1).join("/"));
+                });
+            }else{
+                createF(arr.slice(0,++n+1).join("/"));
+            }
+        });
+    }
+}
+```
+
+## 流 stream
+### 可读流特点  fs.createReadStream("./1.txt",{highWaterMark:1})
+- 1，每次可读大小：highWaterMark = 64*1024   最大64K  ，超过64k，读两次
+- 2，没有编码默认是buffer ，读永远都是buffer格式
+- 3，buffer可以控制速率，是异步读取
+
+```
+let rs = fs.createReadStream("./1.txt",{highWaterMark:1});
+//console.log(rs);//可读流创建后返回的可读流对象
+var arr = [];
+//读取可读流中的内容，非流动模式->流动模式  监听事件
+rs.on("data",function(data){//监听每次读到的内容
+    rs.pause();   //暂停读取，暂停触发data事件
+    //console.log(data);
+    console.log("读取一次");
+    arr.push(data);
+});
+//每隔多久触发一次data事件
+setInterval(function(){
+    rs.resume(); //恢复触发data事件
+},1000);
+//监听每次读到的内容，文件读取完成后执行end方法
+rs.on("end",function(){
+    var l  = Buffer.concat(arr).toString();
+    console.log(l);
+});
+rs.on("error",function(err){
+    console.log(err);
+});//监听读流中的错误
+```
+
+### 可读流中常用方法
+- on("data",function(data){});  监听每次读到的内容
+- on("end",function(){});     文件读取完毕后触发
+- on("error",function(err){});   监听读流中的错误
+- parse();  暂停读出，暂停触发data事件
+- resume(); 恢复触发data事件
+
+## 可写流特点 fs.createWriteStream("./2.txt",{highWaterMark:1})
+- 1，如果文件不存在，则创建
+- 2，写入时，默认编码格式是utf8
+- 3，通过流写入文件也是异步
+- 4，默认写的时候创建的空间大小是16k
+- 5，write()返回值表示是否能写入，不管true还是false都能写入
+- 6，end方法会调用write方法,无论是否写完，都会强制被写入，关闭掉文件   只能调用一次
+   调用多次会报错：write after end   已经结束了，不能再写入了
+   如果end();没有参数，不会报错
+
+
+### 限制写入内容大小，如果写不下了，暂停写入，当全部写入后，再继续写
+```
+//on("drain");  内存中需要写入的内容全部写完触发
+
+//默认能写入一次，如果flag变成false,停止写入
+let fs = require("fs");
+let ws = fs.createWriteStream("./2.txt",{highWaterMark:1});
+let index = 0;
+function eat(){
+    let flag = true;
+    while(flag&&index<10){
+        flag = ws.write(index+++"");
+    }
+    if(index>=0){
+        ws.end();
+    }
+}
+eat();
+ws.on("drain",function(){//表示预计的内存和可用空间的内容全部消化后执行的方法
+    console.log("干了");
+    eat();//利用预估的空间写入内容
+});
+```
+
+### 可写流方法
+
+- ws.write();
+- ws.end();
+- ws.on("drain")
+
+
+# 20170529
+## stream 
+### 边读边写 
+- 自定义copy 原理来源于pipe原理，主要连接可读流和可写流
+```
+//拷贝，
+//先读一次，rs开始写，如果不能写了，rs.pause();
+//当数据全部写入后，恢复读取rs.resume();监听读取完成的end事件，rs.on(end);
+//调用写入的关闭事件ws.end();
+
+let fs = require("fs");
+//异步边读边写
+function copy(source,target){
+    let rs = fs.createReadStream(source,{highWaterMark:3});//最大64K
+    let ws = fs.createWriteStream(target,{highWaterMark:1});//最大16K
+
+    rs.on("data",function(data){
+        let flag = ws.write(data);
+        if(!flag){
+            rs.pause();
+        }
+        ws.on("drain",function(){
+            console.log("休息一下");
+           rs.resume();
+        });
+    });
+    rs.on("end",function(){
+        ws.end();
+    });
+}
+copy("./1.txt","./2.txt");
+```
+
+- pipe原理写法
+```
+pipe是异步方法，不关心文件内容，会调用可写流的write方法和end方法
+let fs = require("fs");
+function copy(source,target){
+    let rs = fs.createReadStream(source,{highWaterMark:3});//最大64K
+    let ws = fs.createWriteStream(target,{highWaterMark:1});//最大16K
+
+    rs.pipe(ws);
+}
+copy("./1.txt","./2.txt");
+```
+
+## http
+
+- http服务  --- 静态服务，只提供静态文件的返回
+```
+//node提供内置模块 可以提供http服务
+//服务端的路径没有../ ，常见的路径是 / 与 ./
+// / 代表根路径 ,默认访问localhost:3000   相当于 /
+// ./
+let http = require("http");
+let fs = require("fs");
+let mime = require("mime");
+let url = require("url");
+//console.log(url.parse("https://username:password@www.baidu.com/s?a=1&b=20#a20",true));
+//true可以默认将query转成对象格式
+http.createServer(function(req,res){
+    //请求不同的路径，返回不同的内容  - 路由
+    //mime可以根据后缀推算出对应的content-type类型
+    //let pathname = req.url;//带有查询参数的，需要的是路径
+    let {pathname,query} = url.parse(req.url,true);
+    if(pathname==="/"){
+        res.setHeader("Content-Type","text/html;charset=utf-8");
+        fs.createReadStream("./index.html").pipe(res);
+    }else{
+        fs.exists("."+pathname,function(flag){
+            if(flag){
+                res.setHeader("Content-Type",mime.lookup(pathname)+";charset=utf-8");
+                fs.createReadStream("."+pathname).pipe(res);
+            }else{
+                res.statusCode = 404;
+                res.end("NOT FOUND 404");
+            }
+        });
+
+    }
+
+}).listen(4000,function(){
+    console.log("server start 4000");
+});
+```
 
 
 
@@ -641,8 +1187,6 @@ process
 
 
 
-
-## 第二周 http fs...
 
 ## 第三周 express cookie  session
 

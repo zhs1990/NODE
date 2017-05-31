@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #file-area{
+            width: 250px;
+            height: 200px;
+            border:1px solid #000;
+            text-align: center;
+            line-height:200px;
+            font-size:30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="file-area">
+    拖放至此
+    </div>
+    <table class="table table-bordered">
+        <tr>
+            <td>文件名称</td>
+            <td>文件大小</td>
+            <td>文件后缀</td>
+        </tr>
+        <tr>
+            <td id="fileName"></td>
+            <td id="filesSize"></td>
+            <td id="fileExt"></td>
+        </tr>
+    </table>
+    <button id="upload">上传</button>
+    <div class="progress">
+        <div class="progress-bar" id="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+            00%
+        </div>
+    </div>
+    <script>
+        //html5 拖拽
+        let area = document.getElementById("file-area");
+        //使用ondrop事件，必须阻止dragover的默认事件
+        area.addEventListener("dragover",function(e){
+            e.preventDefault();
+        });
+        let file = "";
+        area.addEventListener("drop",function(e){
+            console.log(e.dataTransfer.files[0]);//当前拖拽的文件
+            e.preventDefault();
+            file = e.dataTransfer.files[0];
+            fileName.innerHTML = file.name;
+            filesSize.innerHTML = changeExt(file.size);
+            fileExt.innerHTML = file.type;
+        });
+        function changeExt(size){
+            if(size>1024*1024*1024){
+                return (size/1024/1024/1024).toFixed(2)+"G";
+            }else if(size>1024*1024){
+                return (size/1024/1024).toFixed(2)+"MG";
+            }else if(size>1024){
+                return (size/1024).toFixed(2)+"K";
+            }
+        }
+        //上传文件
+        upload.addEventListener("click",function(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST","/upload",true);
+            //formData h5新特性
+            //构建formData容器
+            let fd = new FormData;
+            //追加到formData容器中
+            fd.append("file",file);
+            xhr.onload = function(){
+                alert(xhr.response);
+            };
+            //只要改变进度就会触发此函数
+            xhr.upload.onprogress = function(e){
+                let percent = e.loaded/e.total*100+"%";
+                progress.style.width = percent;
+                progress.innerHTML = (e.loaded/e.total*100).toFixed(2)+"%";
+            };
+            //将内容发送到服务端
+            xhr.send(fd);
+        });
+    </script>
+</body>
+</html>
