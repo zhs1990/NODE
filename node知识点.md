@@ -1,5 +1,5 @@
-## 第一周 git && node基础
-20170520
+# 第一周 git && node基础
+## 20170520
 ======
 ## git使用
         1. 版本控制
@@ -1175,6 +1175,341 @@ http.createServer(function(req,res){
 ```
 
 
+# 第三周 express cookie  session
+## 20170603
+### express
+- 安装express
+```
+npm init -y
+npm install express -S
+```
+- 引入express,express是一个函数调用
+```
+let express = require("express");
+```
+- 此函数调用会返回一个函数，app就是监听函数，简化http开发，基于http
+```
+let app = express();
+```
+- 当客户端以GET方式访问/signup路径时会调用后面的监听函数进行响应
+```
+app.get("/signup",function(req,res){
+    res.setHeader("Content-Type","text/html;charset=utf-8");
+    res.end("注册");
+});
+```
+- 监听端口
+```
+app.listen(8080);
+```
+
+
+### 分析express原理
+```
+let url = require("url");
+function createApplication(){
+    let app = function(req,res){
+        let pathname = url.parse(req.url,true).pathname;
+        for(var i=0;i<app.routes.length;i++){
+            let route = app.routes[i];
+            if(route.method == req.method && route.pathname == pathname){
+                return route.listener(req,res);
+            }
+        }
+        res.end("404 NOT FOUND");
+    };
+    app.routes = [];
+    app.get = function(pathname,listener){
+        app.routes.push({method:"GET",pathname,listener});
+    };
+    app.listen = function(port){
+        require("http").createServer(app).listen(port);
+    };
+    return app;
+}
+module.exports = createApplication;
+```
+
+### express中间件
+- app.use() 表示使用一个中间件
+- 中间件的使用
+```
+
+```
+- 中间件的作用
+> 1，编写公共处理逻辑
+```
+res.setHeader("Content-Type","text/html;charset="+(charset||"utf-8"));
+``` 
+> 2，添加一些公共的方法,每个路由都会用到的方法需要放在中间件中
+```
+app.use(function (req,res,next) {
+    res.print = function(charset,data){
+        res.setHeader("Content-Type","text/html;charset="+(charset||"utf-8"));
+        res.end(data);
+    };
+    req.name = "zhs";
+    next();
+});
+app.use(function (req,res,next) {
+    req.name = "tl";
+    next();
+});
+app.get("/signup",function(req,res){
+    res.print("utf-8","注册");
+});
+app.get("/signin",function (req,res) {
+    res.print("utf-8","登录");
+});
+app.listen(8080,function(){
+    console.log("8080");
+});
+```
+> 3，进行业务逻辑判断
+```
+let express = require("express");
+let url = require("url");
+let app = express();
+/*
+* 当访问/signin?username=zhs将username值取出来赋给username，
+* 当访问/user的时候,在中间件中判断此用户是否登录，如果未登录，提示没有访问权限，如果已经登录，正常访问
+* */
+let username;
+app.use(function(req,res,next){
+    let {pathname,query} = url.parse(req.url,true);
+    res.setHeader("Content-Type","text/html;charset=utf-8");
+    if(pathname=="/user"){
+        if(username){
+            next();
+        }else{
+            res.end("你没有访问权限");
+        }
+    }else{
+        next();
+    }
+});
+app.get("/signin",function(req,res){
+    let {pathname,query} = url.parse(req.url,true);
+    username = query.username;
+    res.end("啦啦");
+});
+app.get("/user",function(req,res){
+    res.end("welcome");
+});
+app.listen(8080);
+```
+- 错误处理中间件有四个参数
+> 如果next中传递了参数，表示任务出错了，则会跳过后面所有的正常中间件和路由，交给错误处理中间件处理
+```
+app.use(function(req,res,next){
+    req.money -= 40;
+    next("钱丢了");
+});
+app.use(function(err,req,res,next){
+    console.log("错误处理"+req.money);
+    console.log(err);
+    res.end("error handler");
+});
+```    
+
+## 请求中的参数
+- req.method    获取请求方式
+- req.path      获取路径名称（相当于url模块取到的pathname） 
+- req.query     查询字符串对象
+- req.headers   获取请求头对象
+- req.params    获取参数对象 
+```
+app.get("/users/:id",function(req,res){
+    //{id:444} 
+    console.log(req.params);  //获取参数对象
+    let id = req.params.id;
+    res.end(id);
+});
+```
+### 分析req.params原理
+```
+let pattern = "/users/:id/:name";
+let request = "/users/1/zhs";
+let params = {};
+let paramNames = [];
+pattern = pattern.replace(/:(\w+)/g,function(){
+    paramNames.push(arguments[1]);
+    return "(\\w+)";
+});
+let result = request.match(new RegExp(pattern));
+for(var i=0;i<paramNames.length;i++){
+    params[paramNames[i]] = result[i+1];
+}
+console.log(params);
+```
+
+### send方法
+- 可以接受任何类型  对象  字符 buffer  数字
+- 数字类型比较特殊
+```
+
+```
+
+### template
+- 第一步：设置模板引擎，此项必须设置，不设置不能用
+```
+app.set("view engine","ejs");
+app.set("view engine","html");//参数2的名称必须与engine()方法的参数1一致
+```
+- 第二步：设置模板存放的根路径(存放目录名称会默认找views，但是可以手动指定)
+```
+app.set("views",path.resolve("tmpl"));
+```
+- 第三步：可以手动指定模板后缀名
+```
+app.engine("html",require("ejs").__express);
+```
+- res.locals才是真正渲染模板的数据对象
+```
+app.use(function(req,res,next){
+    //res.locals才是真正渲染模板的数据对象
+    res.locals.website = "珠峰培训";
+    next();
+});
+```
+- 第四步：渲染模板=模板+数据对象
+> render负责把模板文件和数据对象进行混合并响应输出
+> res.render(模板的相对路径,数据对象);
+> 在真正渲染之前，会把新的内容拷贝到res.locals创建的对象上去
+> 使用习惯：公有的数据放在中间件，私有的数据放在路由中
+```
+app.get("/list",function(req,res){
+    res.render("list",{
+        title:"list哈哈哈"
+    });
+});
+app.get("/",function(req,res){
+    res.render("home",{
+        title:"home啦啦啦"
+    });
+});
+app.listen(8080);
+```
+
+### 静态文件中间件 -- 用来响应对客户端的静态文件请求  ---css,js,image
+```
+app.use(express.static(path.resolve("public")));
+```
+
+### sendFile 
+- 路径(必须是绝对路径)
+- 将index.html文件读取出来发送给客户端
+```
+res.sendFile(path.resolve("./index.html"))
+```
+### 分析express.static原理
+```
+function static(root){
+    return function(req,res,next){
+        let realPath = path.join(root,req.path);
+        fs.exists(realPath,function(flag){
+            if(flag){
+                res.sendFile(realPath);//如果找到文件，就将文件读取出来发送给客户端
+            }else{
+                next();//如果找不到文件的话，就继续向下走，让下面的程序处理
+            }
+        });
+    }
+}
+app.use(static(path.resolve("public")));
+```
+
+
+# 20170604
+## cookie
+### 原生cookie的使用分析
+- 1，第一次客户端向服务器发送请求
+- 2，服务器通过响应头Set-Cookie向客户端种植cookie
+```
+设置cookie
+res.setHeader("Set-Cookie","name=1");  设置一个cookie
+res.setHeader("Set-Cookie",["name=zhs","age=10"]);  设置多个cookie
+```
+- 3，客户端再次向服务器发送请求并携带上cookie请求头
+- 4，服务器通过读取请求头中的cookie并进行响应
+```
+读取cookie
+req.header.cookie  =>  name=zhs; age=10; visit=1
+```
+
+### 练习：通过原生cookie来分析访问次数
+```
+let http = require("http");
+let url = require("url");
+let querystring = require("querystring");
+http.createServer(function(req,res){
+    let urlObj = url.parse(req.url,true);
+    let {pathname} = urlObj;
+    if(pathname==="/visit"){
+        let cookie = req.headers.cookie;
+        let visit = querystring.parse(cookie,"; ").visit;
+        if(visit){
+            visit++;
+        }else{
+            visit = 1;  
+        }
+        res.setHeader("Set-Cookie",`visit=${visit}`);
+        res.setHeader("Content-Type","text/html;charset=utf-8");
+        res.end(`欢迎光临第${visit}次`)
+    }else{
+        res.end("404");
+    }  
+}).listen(8090);
+```
+
+### express中cookie
+- express中获取cookie
+```
+
+```
+
+## mongodb
+### 特点  
+- 分布式存储
+- 高并发
+- 数据存储为文档，类似于json对象
+
+### mongodb命令
+- 常看当前数据库
+```
+db
+```
+- 切换数据库
+```
+use 数据库名称(不存在也可以)
+```
+- 向当前数据库stu集合中插入一个文档
+```
+db.stu.insert({name:'zfpx1'});
+```
+- 查看当前stu集合下的主键
+```
+db.stu.find();
+```
+- 删除当前数据库
+```
+db.dropDatabase();
+```
+- 删除某个集合
+```
+db.集合名字.drop();
+```
+### 主键 就是一个文档的主要的键，当向数据库的某个集合中插入一个文档的时候，mongodb会自动补一个主键 _id
+- 唯一性 每个文档的主键不会相同
+- 业务无关性
+
+
+
+### MEAN架构
+- MONGODB
+- EXPRESS
+- ANGULAR
+- NODE
 
 
 
@@ -1188,7 +1523,6 @@ http.createServer(function(req,res){
 
 
 
-## 第三周 express cookie  session
 
 ## 第四周 mongodb + 博客项目
 
