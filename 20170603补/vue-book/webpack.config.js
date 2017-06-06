@@ -1,5 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: './src/main.js',
@@ -47,7 +47,7 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true,
     proxy:{//配置代理
-      "/book":"http://127.0.0.1:7000"
+      "/book":"http://127.0.0.1:6000"
     }
   },
   performance: {
