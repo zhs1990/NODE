@@ -2,7 +2,7 @@ let express = require("express");
 let cookieParser = require("cookie-parser");
 let app = express();
 
-//基本上所有的中间都有特点，他们都是一个函数，所以调用一下才会返回真正的中间件函数
+//基本上所有的中间件都有特点，他们都是一个函数，所以调用一下才会返回真正的中间件函数
 //使用此中间件之后，会在req.cookies上拿到cookie
 app.use(cookieParser());
 app.get("/write",function(req,res){

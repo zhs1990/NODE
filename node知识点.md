@@ -1465,7 +1465,17 @@ http.createServer(function(req,res){
 ### express中cookie
 - express中获取cookie
 ```
+app.use(require('cookie-parser')());    //使用中间件
+res.cookies  
+```
+- express中设置cookie
+```
+res.cookie(name,value,[{domain:'a.zfpx.cn'},{path:'/visit'},{expires:new Date(Date.now()+20*1000)},{maxAge:20*1000},{httpOnly:true}]);
+```
 
+## session
+```
+$ npm install express-session
 ```
 
 ## mongodb
