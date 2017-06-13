@@ -19,5 +19,5 @@ ReactDom.render(
     document.getElementById("root")
 );
 
-//elements and components
+//elements and todo-components
 //React元素  React组件

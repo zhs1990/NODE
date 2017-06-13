@@ -1,0 +1,66 @@
+1.开发书店导航组件
+  css bootstrap ui组件
+  npm i bootstrap -S
+
+2.处理bootstrap
+(1)路径问题（默认导出的是js）
+ alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+       'bootstrap$': 'bootstrap/dist/css/bootstrap.css'
+    }
+（2）css style loader加载规则
+（3）字体图标文件处理
+ {
+        test: /\.(png|jpg|gif|svg|eot|woff|woff2|ttf)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
+      },
+
+3.导航组件 navbar.vue
+
+4.基于vue-router 开发单页应用
+需要的路由组件
+list.vue(图书列表组件)   add.vue(图书增加组件)
+detail.vue (详情组件)
+
+(1) 配置路由导航
+(2) 创建路由组件
+(3) 配置路由表 （注册路由表）
+(4) 生成和导出VueRouter实例
+
+(5) 在Vue跟实例中注入路由router
+
+5.list组件
+(1)通过vue-resource 进行前后端交互
+
+(2) webpack=> devServer.proxy(解决跨域问题)
+  proxy: {
+      '/books': 'http://127.0.0.1:7000'
+    }
+
+http://localhost:8080/books => http://127.0.0.1:7000/books
+
+
+(3)搭建node server (express)
+(4)接口restful风格
+ get 获取一个或多个资源
+ post 向后添加资源
+ put 更新修改资源
+delete 删除资源
+
+6.详情页
+需求：
+详情路由导航按钮 在list页价格旁边添加一个 详情路由导航按钮
+
+当我点击 切换到 详情路由
+
+准备：
+detail组件
+配置 详情路由
+
+(2) 修改 删除 （ body-parser 解析请求体的中间件)
+在我价格添加 修改和删除功能
+
+7.添加组件

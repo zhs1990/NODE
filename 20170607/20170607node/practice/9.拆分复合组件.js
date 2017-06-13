@@ -1,7 +1,7 @@
 import React,{Component} from "react"
 import ReactDOM,{render} from "react-dom"
 import "bootstrap/dist/css/bootstrap.css"
-import Pagination from "./components/Pagination.js"
+import Pagination from "./todo-components/Pagination.js"
 
 //分页组件
 

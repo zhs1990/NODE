@@ -1465,6 +1465,7 @@ http.createServer(function(req,res){
 ### express中cookie
 - express中获取cookie
 ```
+npm install cookie-parser -S
 app.use(require('cookie-parser')());    //使用中间件
 res.cookies  
 ```
@@ -1475,8 +1476,69 @@ res.cookie(name,value,[{domain:'a.zfpx.cn'},{path:'/visit'},{expires:new Date(Da
 
 ## session
 ```
-$ npm install express-session
+$ npm install express-session -S
 ```
+### 什么是session?
+- session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而session保存在服务器上
+- 客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上，这就是session。客户端浏览器再次访问时只需要从该Session中查找该客户的状态就可以了
+
+### cookie与session区别?
+- 1，cookie数据存放在客户的浏览器上，session数据放在服务器上
+- 2，cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗 考虑到安全应当使用session
+- 3，session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面,应当使用COOKIE
+- 4，单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie
+> 将登陆信息等重要信息存放为session、其他信息如果需要保留，可以放在cookie中
+
+### session实现
+- 1,在服务器端生成全局唯一标识符session_id
+- 2,在服务器内存里开辟此session_id对应的数据存储空间
+- 3,将session_id作为全局唯一标示符通过cookie发送给客户端
+- 4,以后客户端再次访问服务器时会把session_id通过请求头中的cookie发送给服务器
+- 5,服务器再通过session_id把此标识符在服务器端的数据取出
+```
+var express = require('express');
+var cookieParser = require('cookie-parser');
+var app = express();
+app.use(cookieParser());
+//存放会话数据 key卡号 value就是卡号对应的数据对象
+var sessions = {};
+//与客户端约定的会话ID
+var SESSION_KEY = 'session.id'
+//当用户访问根目录的时候 执行对应的回调函数
+app.get('/',function(req,res){
+    res.setHeader('Content-Type','text/html;charset=utf-8');
+   // 1. 先取出cookie中的sessionId 卡号
+    var sessionId = req.cookies[SESSION_KEY];
+    // 如果有卡号的，也就是有ID的话 老顾客
+    if(sessionId){
+        //取出此卡号对应的信息，余额
+        var sessionObj = sessions[sessionId];
+        if(sessionObj){
+            //扣掉10块钱
+            sessionObj.balance = sessionObj.balance -10;
+            res.send('欢迎你老顾客，你卡上还剩'+sessionObj.balance);
+        }else{
+            genId(res);
+        }
+    //如果没有的话就是新顾客
+    }else{
+        genId(res);
+    }
+    function genId(res){
+        //由店家生成一个唯一的卡号
+        var id = Date.now()+''+Math.random();
+        //要在店家的小本上记录一下此卡号对应的余额
+        sessions[id] = {balance:100};
+        //把这个卡发给顾客带回家
+        res.cookie(SESSION_KEY,id);
+        //告诉 用户送他一张卡
+        res.send('欢迎你新顾客，送你一张价值100元的剪发卡');
+    }
+});
+
+app.listen(9090);
+```
+
 
 ## mongodb
 ### 特点  
@@ -1521,6 +1583,44 @@ db.集合名字.drop();
 - ANGULAR
 - NODE
 
+#
+
+## Mongoose
+### 定义
+- Mongoose是MongoDB的一个对象模型工具，同时它也是针对MongoDB操作的一个对象模型库,封装了MongoDB对文档的的一些增删改查等常用方法 让NodeJS操作Mongodb数据库变得更加灵活简单
+### 安装mongoose
+```
+npm install mongoose
+```
+### 使用mongoose
+- 1，引入mongoose 连接数据库
+```
+var mongoose = require("mongoose");
+//mongoose.connect("mongodb://localhost:端口号/数据库名称");
+mongoose.connect("mongodb://localhost:27017/zhufengpeixunblog");
+```
+- 2，建立骨架模型  - Schema是数据库集合的模型骨架 定义了集合中的字段的名称和类型以及默认值等信息
+```
+var personSchema = new mongoose.Schema({
+    name:String,
+    password:String
+});
+```
+- 3，Model 
+> Model是由通过Schema构造而成 除了具有Schema定义的数据库骨架以外，还可以操作数据库 如何通过Schema来创建Model
+```
+//两个参数表示定义一个模型
+var PersonModel = mongoose.model("Person", PersonSchema);
+// 如果该Model已经定义，则可以直接通过名字获取
+var PersonModel = mongoose.model('Person');//一个参数表示获取已定义的模型
+```
+>拥有了Model，我们也就拥有了操作数据库的能力
+```
+在数据库中的集合名称等于 模型名转小写再转复数,比如 Person>person>people,Child>child>children
+```
+
+
+
 
 
 
@@ -1535,6 +1635,7 @@ db.集合名字.drop();
 
 
 ## 第四周 mongodb + 博客项目
+
 
 ## 第五周 聊天室+爬虫
 

@@ -1325,7 +1325,7 @@ If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest
 <!--
 ## Developing Components in Isolation
 
-Usually, in an app, you have a lot of UI components, and each of them has many different states.
+Usually, in an app, you have a lot of UI todo-components, and each of them has many different states.
 For an example, a simple button component could have following states:
 
 * With a text label.
@@ -1334,11 +1334,11 @@ For an example, a simple button component could have following states:
 
 Usually, it’s hard to see these states without running a sample app or some examples.
 
-Create React App doesn’t include any tools for this by default, but you can easily add [React Storybook](https://github.com/kadirahq/react-storybook) to your project. **It is a third-party tool that lets you develop components and see all their states in isolation from your app**.
+Create React App doesn’t include any tools for this by default, but you can easily add [React Storybook](https://github.com/kadirahq/react-storybook) to your project. **It is a third-party tool that lets you develop todo-components and see all their states in isolation from your app**.
 
 ![React Storybook Demo](http://i.imgur.com/7CIAWpB.gif)
 
-You can also deploy your Storybook as a static app. This way, everyone in your team can view and review different states of UI components without starting a backend server or creating an account in your app.
+You can also deploy your Storybook as a static app. This way, everyone in your team can view and review different states of UI todo-components without starting a backend server or creating an account in your app.
 
 **Here’s how to setup your app with Storybook:**
 
