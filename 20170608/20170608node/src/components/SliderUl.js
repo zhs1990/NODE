@@ -2,9 +2,7 @@ import React,{Component} from "react"
 export default class SliderUl extends Component{
     render(){
         let style = {
-            width:300*this.props.images.length,
-            left:this.props.index*-300,
-            transitionDuration:this.props.speed+"s"
+            width:300*(this.props.images.length+1),
         };
         return (
             <ul className="sliders" style={style}>
@@ -15,6 +13,9 @@ export default class SliderUl extends Component{
                         </li>
                     ))
                 }
+                <li className="slider" key={this.props.images.length}>
+                    <img src={this.props.images[0].src} />
+                </li>
             </ul>
         );
     }

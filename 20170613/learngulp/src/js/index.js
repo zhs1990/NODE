@@ -1,0 +1,1 @@
+render('<h1>1111222</h1>',document.getElementById('app'));

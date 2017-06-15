@@ -3,6 +3,7 @@ import './Slider.css'
 import SliderUl from "./SliderUl"
 import SliderDot from './SliderDot'
 import SliderArrow from './SliderArrow'
+import $ from "jquery"
 export default class Slider extends Component{
     constructor(props){
         super(props);
@@ -11,18 +12,22 @@ export default class Slider extends Component{
         };
     }
     componentDidMount(){
+        this.$sliders =  $('.sliders');
         if(this.props.autoplay){
             this.go();
         }
     }
     turn = (n)=>{//切换
         let index = this.state.index + n;
-        if(index>=this.props.items.length){
-            index = 0;
+        if(index>=this.props.items.length+1){
+            this.$sliders.css('left',0);
+            index = 1;
         }
         if(index<0){
+            this.$sliders.css('left',this.props.images.length*-300);
             index = this.props.items.length-1;
         }
+        this.$sliders.stop().animate({left:index * -300},this.props.speed*1000);
         this.setState({index});
     }
     go = ()=>{
