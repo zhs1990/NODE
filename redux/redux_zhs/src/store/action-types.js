@@ -1,3 +1,4 @@
-export let TODO_ADD = "TODO_ADD";
-export let TODO_DEL = "TODO_DEL";
-export let FILTER_CHANGE = "FILTER_CHANGE";
+export const ADD_TODO = "ADD_TODO";
+export const DEL_TODO = "DEL_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const CHANGE_FILTER = "CHANGE_FILTER";

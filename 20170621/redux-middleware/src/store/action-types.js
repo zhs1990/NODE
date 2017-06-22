@@ -1,0 +1,4 @@
+//开始获取联想词
+const FETCH_WORDS = "FETCH_WORDS";
+const FETCH_SUCCESS = "FETCH_SUCCESS";
+export {FETCH_WORDS,FETCH_SUCCESS};

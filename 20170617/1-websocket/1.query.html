@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" onkeydown="send(event)">
+<ul id="message">
+
+</ul>
+<script>
+    //当浏览器向服务器发送post请求之前，会先向服务器发送一个options请求，判断得到的响应。看是否允许发post请求，看允许发哪些请求
+    function send(event){
+        if(event.keyCode==13){
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST","http://localhost:3000/message",true);
+            xhr.setRequestHeader("Content-Type","application/json");
+            xhr.onreadystatechange = function () {
+                if(xhr.readyState==4){
+                    if(/2\d{2}/.test(xhr.status)){
+
+                    }
+                }
+            };
+            //发送的数据格式一定要与请求头中设置的格式保持一致
+            xhr.send(JSON.stringify({content:event.target.value}));
+        }
+    }
+    setInterval(function(){
+        let xhr = new XMLHttpRequest();
+        //0 初始状态
+        //1 open
+        xhr.open("GET","http://localhost:3000/message",true);
+        xhr.responseType = "json";
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState==4){
+                if(/2\d{2}/.test(xhr.status)){
+                    let arr = xhr.response;
+                    let str = "";
+                    for(let i=0;i<arr.length;i++){
+                        str+=`
+                            <li>${arr[i].content}</li>
+                        `;
+                    }
+                    document.querySelector("#message").innerHTML = str;
+                }
+            }
+        };
+        //2 send
+        //3 开始接受响应之后
+        //4 响应接受完毕之后
+        xhr.send();
+    },1000);
+</script>
+</body>
+</html>

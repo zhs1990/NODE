@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+input,button{
+    outline: none;
+    border: none;
+}
+.container{
+    width:50%;
+    margin:100px auto;
+}
+.container .logo{
+    text-align: center;
+}
+.container .logo img{
+    width: 240px;
+    height:129px;
+}
+.container .search{
+    height:40px;
+}
+.container .search input{
+    width:80%;
+    height: 40px;
+    border:1px solid #3388ff;
+    float: left;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding-left:5px;
+}
+.container .search button{
+    width:20%;
+    height:40px;
+    background: #3388ff;
+    float: left;
+    color:#fff;
+}
+.container .words{
+    border:1px solid #CCC;
+    box-sizing: border-box;
+}
+.container .words li{
+    line-height: 200%;
+    font-weight: bold;
+    padding-left: 5px;
+}
+.container .words li a{
+    text-decoration: none;
+    color:#000;
+}
+
+.container .words li:hover{
+    background-color: #CCC;
+}

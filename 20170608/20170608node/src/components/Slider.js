@@ -24,7 +24,7 @@ export default class Slider extends Component{
             index = 1;
         }
         if(index<0){
-            this.$sliders.css('left',this.props.images.length*-300);
+            this.$sliders.css('left',this.props.items.length*-300);
             index = this.props.items.length-1;
         }
         this.$sliders.stop().animate({left:index * -300},this.props.speed*1000);
@@ -36,6 +36,7 @@ export default class Slider extends Component{
         },this.props.delay*1000);
     }
     render(){
+        console.log(this.props.items)
         let sliderOptions = {};
         let SliderUlOptions = {
             index:this.state.index,

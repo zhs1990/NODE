@@ -1,7 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import {createStore} from "./redux"
-import TodoApp from "./coms/coms"
+import React from "react";
+import ReactDOM from "react-dom";
+import Todos from "./components/Todos"
 
-ReactDOM.render(<TodoApp/>,document.getElementById("root"));
-
+ReactDOM.render(
+    <Todos/>,
+    document.getElementById("root")
+);

@@ -1638,5 +1638,38 @@ var PersonModel = mongoose.model('Person');//一个参数表示获取已定义�
 
 
 ## 第五周 聊天室+爬虫
+## 20170618
+### 爬虫
+
+### 编码发展历程
+- 机器码 -> ASCII码（0~127）->GB2312/GBK(国标括)[中国] -> unicode编码(国际统一：全世界所有国家编码)：utf8
+
+### 操作步骤
+cd /data/work_run
+mkdir -p /data/work_run
+24  git clone https://github.com/zhufengnodejs/201702crawl.git
+25  cd 201702crawl/
+26  npm install
+28  git pull origin master
+29  npm install
+
+31  cd tasks
+
+33  export DEBUG=crawl:*
+34  node main.js
+35  cd ..
+36  ls
+37  node server.js 
+38  history
 
 ## 第六周 实战项目
+
+
+//7
+//Zfpx2017
+118.178.140.79
+
+root
+Zfpx2017
+
+/var/www/html
